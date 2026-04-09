@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PryEdBarberoB
+namespace pryEDRomoLucas
 {
     public partial class EstructuraDeDatos : Form
     {
         public EstructuraDeDatos()
         {
             InitializeComponent();
-        }
-
-        private void sistemaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -32,8 +27,8 @@ namespace PryEdBarberoB
 
         private void datosDelProgramadorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDatosDelDesarrollador v = new frmDatosDelDesarrollador();
-            v.ShowDialog();
+            frmCopy frmCopy = new frmCopy();
+            frmCopy.ShowDialog();
         }
 
         private void mesesToolStripMenuItem_Click(object sender, EventArgs e)

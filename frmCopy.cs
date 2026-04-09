@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace pryEDRomoLucas
+namespace PryEdBarberoB
 {
-    public partial class frmAlumnos : Form
+    public partial class frmCopy : Form
     {
-        public frmAlumnos()
+        public frmCopy()
         {
             InitializeComponent();
         }

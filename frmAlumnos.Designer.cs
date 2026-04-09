@@ -1,4 +1,4 @@
-﻿namespace PryEdBarberoB
+﻿namespace pryEDRomoLucas
 {
     partial class frmAlumnos
     {
@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlumnos));
             this.dgvAlumnos = new System.Windows.Forms.DataGridView();
+            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCarrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.txtCarrera = new System.Windows.Forms.TextBox();
             this.lblCarrera = new System.Windows.Forms.Label();
@@ -36,9 +40,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCarrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnListar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,67 +51,10 @@
             this.colCodigo,
             this.colNombre,
             this.colCarrera});
-            this.dgvAlumnos.Location = new System.Drawing.Point(24, 258);
+            this.dgvAlumnos.Location = new System.Drawing.Point(12, 190);
             this.dgvAlumnos.Name = "dgvAlumnos";
-            this.dgvAlumnos.Size = new System.Drawing.Size(337, 150);
+            this.dgvAlumnos.Size = new System.Drawing.Size(362, 243);
             this.dgvAlumnos.TabIndex = 15;
-            // 
-            // btnGrabar
-            // 
-            this.btnGrabar.Location = new System.Drawing.Point(263, 190);
-            this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(75, 23);
-            this.btnGrabar.TabIndex = 14;
-            this.btnGrabar.Text = "Grabar";
-            this.btnGrabar.UseVisualStyleBackColor = true;
-            // 
-            // txtCarrera
-            // 
-            this.txtCarrera.Location = new System.Drawing.Point(122, 144);
-            this.txtCarrera.Name = "txtCarrera";
-            this.txtCarrera.Size = new System.Drawing.Size(100, 20);
-            this.txtCarrera.TabIndex = 13;
-            // 
-            // lblCarrera
-            // 
-            this.lblCarrera.AutoSize = true;
-            this.lblCarrera.Location = new System.Drawing.Point(49, 144);
-            this.lblCarrera.Name = "lblCarrera";
-            this.lblCarrera.Size = new System.Drawing.Size(44, 13);
-            this.lblCarrera.TabIndex = 12;
-            this.lblCarrera.Text = "Carrera:";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(122, 94);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 11;
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(49, 94);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(47, 13);
-            this.lblNombre.TabIndex = 10;
-            this.lblNombre.Text = "Nombre:";
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Location = new System.Drawing.Point(122, 55);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigo.TabIndex = 9;
-            // 
-            // lblCodigo
-            // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(49, 55);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(43, 13);
-            this.lblCodigo.TabIndex = 8;
-            this.lblCodigo.Text = "Código:";
             // 
             // colCodigo
             // 
@@ -126,11 +71,82 @@
             this.colCarrera.HeaderText = "Carrera";
             this.colCarrera.Name = "colCarrera";
             // 
+            // btnGrabar
+            // 
+            this.btnGrabar.Location = new System.Drawing.Point(264, 145);
+            this.btnGrabar.Name = "btnGrabar";
+            this.btnGrabar.Size = new System.Drawing.Size(97, 23);
+            this.btnGrabar.TabIndex = 14;
+            this.btnGrabar.Text = "Grabar";
+            this.btnGrabar.UseVisualStyleBackColor = true;
+            // 
+            // txtCarrera
+            // 
+            this.txtCarrera.Location = new System.Drawing.Point(86, 101);
+            this.txtCarrera.Name = "txtCarrera";
+            this.txtCarrera.Size = new System.Drawing.Size(216, 20);
+            this.txtCarrera.TabIndex = 13;
+            // 
+            // lblCarrera
+            // 
+            this.lblCarrera.AutoSize = true;
+            this.lblCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblCarrera.Location = new System.Drawing.Point(13, 101);
+            this.lblCarrera.Name = "lblCarrera";
+            this.lblCarrera.Size = new System.Drawing.Size(60, 17);
+            this.lblCarrera.TabIndex = 12;
+            this.lblCarrera.Text = "Carrera:";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(86, 51);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(216, 20);
+            this.txtNombre.TabIndex = 11;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblNombre.Location = new System.Drawing.Point(13, 51);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(62, 17);
+            this.lblNombre.TabIndex = 10;
+            this.lblNombre.Text = "Nombre:";
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(86, 12);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigo.TabIndex = 9;
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblCodigo.Location = new System.Drawing.Point(13, 12);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(56, 17);
+            this.lblCodigo.TabIndex = 8;
+            this.lblCodigo.Text = "Código:";
+            // 
+            // btnListar
+            // 
+            this.btnListar.Location = new System.Drawing.Point(161, 145);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(97, 23);
+            this.btnListar.TabIndex = 16;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
+            // 
             // frmAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(386, 455);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(386, 449);
+            this.Controls.Add(this.btnListar);
             this.Controls.Add(this.dgvAlumnos);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.txtCarrera);
@@ -161,5 +177,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCarrera;
+        private System.Windows.Forms.Button btnListar;
     }
 }
