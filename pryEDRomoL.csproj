@@ -46,17 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsArchivoTexto.cs" />
     <Compile Include="frmAlumnos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAlumnos.Designer.cs">
       <DependentUpon>frmAlumnos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEstructuradedatos.cs">
+    <Compile Include="frmCarreras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEstructuradedatos.Designer.cs">
-      <DependentUpon>frmEstructuradedatos.cs</DependentUpon>
+    <Compile Include="frmCarreras.Designer.cs">
+      <DependentUpon>frmCarreras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCopy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCopy.Designer.cs">
+      <DependentUpon>frmCopy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="frmClientes.cs">
       <SubType>Form</SubType>
@@ -81,8 +94,14 @@
     <EmbeddedResource Include="frmAlumnos.resx">
       <DependentUpon>frmAlumnos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEstructuradedatos.resx">
-      <DependentUpon>frmEstructuradedatos.cs</DependentUpon>
+    <EmbeddedResource Include="frmCarreras.resx">
+      <DependentUpon>frmCarreras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCopy.resx">
+      <DependentUpon>frmCopy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
@@ -95,14 +114,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -116,8 +129,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ft facherita.jpg" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

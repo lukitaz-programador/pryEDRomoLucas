@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PryEdBarberoB.Properties
+namespace pryEDRomoLucas.Properties
 {
 
 

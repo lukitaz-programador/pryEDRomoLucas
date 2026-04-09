@@ -8,13 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PryEdBarberoB
+namespace pryEDRomoLucas
 {
     public partial class frmClientes : Form
     {
         public frmClientes()
         {
             InitializeComponent();
+        }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            clsArchivoTexto objClientes = new clsArchivoTexto();
+            objClientes.NomArchi3 = "Clientes.csv";
+            objClientes.Grabar(txtCodigo.Text, txtNombre.Text, txtDeuda.Text);
         }
     }
 }
