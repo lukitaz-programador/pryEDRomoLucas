@@ -1,4 +1,4 @@
-﻿using pryEDnuevoSANTINO;
+﻿using pryEDRomoL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace pryEDRomoLucas
+namespace pryEDRomoL
 {
     public partial class frmMeses : Form
     {
@@ -18,26 +18,41 @@ namespace pryEDRomoLucas
             InitializeComponent();
         }
 
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            clsArchivo x = new clsArchivo();
+            x.NomArchi = ("Meses.csv");
+            x.Grabar(txtMeses.Text);
+            x.Recorrer(lstMeses);
+
+            txtMeses.Text = "";
+        }
+
+        private void frmMeses_Load(object sender, EventArgs e)
+        {
+            btnGrabar.Enabled = false;
+        }
+
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            if (txtNombre.Text != "")
-            {
-                btnGrabar.Enabled = true;
-            }
-            else
+            if (txtMeses.Text == "")
             {
                 btnGrabar.Enabled = false;
             }
+            else
+            {
+                btnGrabar.Enabled = true;
+            }
         }
 
-        private void btnGrabar_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            clsArchivoTexto x = new clsArchivoTexto();
-            x.NomArchi = "Meses.txt";
-            x.Grabar(txtNombre.Text);
-            x.Recorrer(cmbColores);
+            clsArchivo x = new clsArchivo();
+            x.NomArchi = ("Meses.csv");
+            x.LimpiarTodo();
+            x.Recorrer(lstMeses);
 
-            txtNombre.Text = "";
+            txtMeses.Text = "";
         }
     }
 }

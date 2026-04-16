@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace pryEDRomoLucas
+namespace pryEDRomoL
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace pryEDRomoLucas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EstructuraDeDatos());
+            Application.Run(new frmPrincipal());
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using pryEDnuevoSANTINO;
+﻿using pryEDRomoL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PryEdBarberoB
+namespace pryEDRomoL
 {
     public partial class frmCarreras : Form
     {
@@ -18,12 +18,41 @@ namespace PryEdBarberoB
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnGrabar_Click(object sender, EventArgs e)
         {
-            clsArchivoTexto objCarrera = new clsArchivoTexto();
-            objCarrera.NomArchi = "Carreras.txt";
-            objCarrera.BorrarTodo();
-            objCarrera.Recorrer(lstCarreras);
+            clsArchivo x = new clsArchivo();
+            x.NomArchi = ("Carreras.csv");
+            x.Grabar(txtCarreras.Text);
+            x.Recorrer(lstCarreras);
+
+            txtCarreras.Text = "";
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            clsArchivo x = new clsArchivo();
+            x.NomArchi = ("Carreras.csv");
+            x.LimpiarTodo();
+            x.Recorrer(lstCarreras);
+
+            txtCarreras.Text = "";
+        }
+
+        private void txtCarreras_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCarreras.Text == "")
+            {
+                btnGrabar.Enabled = false;
+            }
+            else
+            {
+                btnGrabar.Enabled = true;
+            }
+        }
+
+        private void frmCarreras_Load(object sender, EventArgs e)
+        {
+            btnGrabar.Enabled = false;
         }
     }
 }

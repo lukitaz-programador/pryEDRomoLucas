@@ -1,4 +1,4 @@
-﻿namespace PryEdBarberoB
+﻿namespace pryEDRomoL
 {
     partial class frmCopy
     {

@@ -1,4 +1,4 @@
-﻿using pryEDnuevoSANTINO;
+﻿using pryEDRomoL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace pryEDRomoLucas
+namespace pryEDRomoL
 {
     public partial class frmColores : Form
     {
@@ -17,25 +17,42 @@ namespace pryEDRomoLucas
         {
             InitializeComponent();
         }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            clsArchivo x = new clsArchivo();
+            x.NomArchi = ("Colores.csv");
+            x.Grabar(txtColores.Text);
+            x.Recorrer(lstColores);
+
+            txtColores.Text = "";
+        }
+
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            if (txtNombre.Text != "")
+            if (txtColores.Text == "")
             {
-                btnGrabar.Enabled = true;
+                btnGrabar.Enabled = false;
             }
             else
             {
-                btnGrabar.Enabled = false;
-            }   
+                btnGrabar.Enabled = true;
+            }
         }
-        private void btnGrabar_Click(object sender, EventArgs e)
-        {
-            clsArchivoTexto x = new clsArchivoTexto();
-            x.NomArchi = "Colores.txt";
-            x.Grabar(txtNombre.Text);
-            x.Recorrer(cmbColores);
 
-            txtNombre.Text = "";
+        private void frmColores_Load(object sender, EventArgs e)
+        {
+            btnGrabar.Enabled = false;
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            clsArchivo x = new clsArchivo();
+            x.NomArchi = ("Careras.csv");
+            x.LimpiarTodo();
+            x.Recorrer(lstColores);
+
+            txtColores.Text = "";
         }
     }
 }

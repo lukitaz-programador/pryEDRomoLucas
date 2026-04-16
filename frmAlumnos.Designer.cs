@@ -1,4 +1,4 @@
-﻿namespace pryEDRomoLucas
+﻿namespace pryEpryEDRomoL
 {
     partial class frmAlumnos
     {
@@ -34,13 +34,13 @@
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCarrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGrabar = new System.Windows.Forms.Button();
-            this.txtCarrera = new System.Windows.Forms.TextBox();
             this.lblCarrera = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.btnListar = new System.Windows.Forms.Button();
+            this.cmbCarrera = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,19 +73,14 @@
             // 
             // btnGrabar
             // 
+            this.btnGrabar.Enabled = false;
             this.btnGrabar.Location = new System.Drawing.Point(264, 145);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(97, 23);
             this.btnGrabar.TabIndex = 14;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.UseVisualStyleBackColor = true;
-            // 
-            // txtCarrera
-            // 
-            this.txtCarrera.Location = new System.Drawing.Point(86, 101);
-            this.txtCarrera.Name = "txtCarrera";
-            this.txtCarrera.Size = new System.Drawing.Size(216, 20);
-            this.txtCarrera.TabIndex = 13;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // lblCarrera
             // 
@@ -99,6 +94,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(86, 51);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(216, 20);
@@ -120,6 +116,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 9;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // lblCodigo
             // 
@@ -140,16 +137,24 @@
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
             // 
+            // cmbCarrera
+            // 
+            this.cmbCarrera.FormattingEnabled = true;
+            this.cmbCarrera.Location = new System.Drawing.Point(86, 101);
+            this.cmbCarrera.Name = "cmbCarrera";
+            this.cmbCarrera.Size = new System.Drawing.Size(121, 21);
+            this.cmbCarrera.TabIndex = 17;
+            // 
             // frmAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(386, 449);
+            this.Controls.Add(this.cmbCarrera);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.dgvAlumnos);
             this.Controls.Add(this.btnGrabar);
-            this.Controls.Add(this.txtCarrera);
             this.Controls.Add(this.lblCarrera);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
@@ -168,7 +173,6 @@
 
         private System.Windows.Forms.DataGridView dgvAlumnos;
         private System.Windows.Forms.Button btnGrabar;
-        private System.Windows.Forms.TextBox txtCarrera;
         private System.Windows.Forms.Label lblCarrera;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
@@ -178,5 +182,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCarrera;
         private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.ComboBox cmbCarrera;
     }
 }

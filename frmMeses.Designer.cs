@@ -1,4 +1,4 @@
-﻿namespace pryEDRomoLucas
+﻿namespace pryEDRomoL
 {
     partial class frmMeses
     {
@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMeses));
             this.lblNombre = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtMeses = new System.Windows.Forms.TextBox();
             this.btnListar = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.lstMeses = new System.Windows.Forms.ListBox();
@@ -46,13 +46,13 @@
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre:";
             // 
-            // txtNombre
+            // txtMeses
             // 
-            this.txtNombre.Location = new System.Drawing.Point(98, 27);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(146, 20);
-            this.txtNombre.TabIndex = 1;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            this.txtMeses.Location = new System.Drawing.Point(98, 27);
+            this.txtMeses.Name = "txtMeses";
+            this.txtMeses.Size = new System.Drawing.Size(192, 20);
+            this.txtMeses.TabIndex = 1;
+            this.txtMeses.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // btnListar
             // 
@@ -91,7 +91,7 @@
             this.Controls.Add(this.lstMeses);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.btnListar);
-            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtMeses);
             this.Controls.Add(this.lblNombre);
             this.Name = "frmMeses";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -104,7 +104,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtMeses;
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.ListBox lstMeses;
