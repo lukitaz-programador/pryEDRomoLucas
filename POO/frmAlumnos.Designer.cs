@@ -1,4 +1,4 @@
-﻿namespace pryEpryEDRomoL
+﻿namespace pryEDRomoL
 {
     partial class frmAlumnos
     {

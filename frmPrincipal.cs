@@ -1,6 +1,6 @@
 ﻿using pryEDRomoL;
 using pryEDRomoL;
-using pryEpryEDRomoL;
+using pryEDRomoL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -66,6 +66,12 @@ namespace pryEDRomoL
         {
             frmColas frmColas = new frmColas();
             frmColas.ShowDialog();
+        }
+
+        private void pilaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPilas frmPilas = new frmPilas();
+            frmPilas.ShowDialog();
         }
     }
 }

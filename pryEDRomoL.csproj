@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B8863B3D-4225-49F6-B878-75D31B4247A4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>PryEdBarberoB</RootNamespace>
-    <AssemblyName>PryEdBarberoB</AssemblyName>
+    <RootNamespace>pryEDRomoL</RootNamespace>
+    <AssemblyName>pryEDRomoL</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,6 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,24 +50,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsArchivoTexto.cs" />
-    <Compile Include="clsNodo.cs" />
-    <Compile Include="frmAlumnos.cs">
+    <Compile Include="CLASES\clsArchivoTexto.cs" />
+    <Compile Include="CLASES\clsCola.cs" />
+    <Compile Include="CLASES\clsNodo.cs" />
+    <Compile Include="CLASES\clsPila.cs" />
+    <Compile Include="POO\frmAlumnos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAlumnos.Designer.cs">
+    <Compile Include="POO\frmAlumnos.Designer.cs">
       <DependentUpon>frmAlumnos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCarreras.cs">
+    <Compile Include="POO\frmCarreras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCarreras.Designer.cs">
+    <Compile Include="POO\frmCarreras.Designer.cs">
       <DependentUpon>frmCarreras.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmColas.cs">
+    <Compile Include="EL\frmColas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmColas.Designer.cs">
+    <Compile Include="EL\frmColas.Designer.cs">
       <DependentUpon>frmColas.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCopy.cs">
@@ -72,51 +78,81 @@
     <Compile Include="frmCopy.Designer.cs">
       <DependentUpon>frmCopy.cs</DependentUpon>
     </Compile>
+    <Compile Include="EL\frmListaDoble.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EL\frmListaDoble.Designer.cs">
+      <DependentUpon>frmListaDoble.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EL\frmListaSimple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EL\frmListaSimple.Designer.cs">
+      <DependentUpon>frmListaSimple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EL\frmPilas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EL\frmPilas.Designer.cs">
+      <DependentUpon>frmPilas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmClientes.cs">
+    <Compile Include="POO\frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmClientes.Designer.cs">
+    <Compile Include="POO\frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmColores.cs">
+    <Compile Include="POO\frmColores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmColores.Designer.cs">
+    <Compile Include="POO\frmColores.Designer.cs">
       <DependentUpon>frmColores.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMeses.cs">
+    <Compile Include="POO\frmMeses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMeses.Designer.cs">
+    <Compile Include="POO\frmMeses.Designer.cs">
       <DependentUpon>frmMeses.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="CLASES\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAlumnos.resx">
+    <EmbeddedResource Include="POO\frmAlumnos.resx">
       <DependentUpon>frmAlumnos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCarreras.resx">
+    <EmbeddedResource Include="POO\frmCarreras.resx">
       <DependentUpon>frmCarreras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EL\frmColas.resx">
+      <DependentUpon>frmColas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCopy.resx">
       <DependentUpon>frmCopy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EL\frmListaDoble.resx">
+      <DependentUpon>frmListaDoble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EL\frmListaSimple.resx">
+      <DependentUpon>frmListaSimple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EL\frmPilas.resx">
+      <DependentUpon>frmPilas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmClientes.resx">
+    <EmbeddedResource Include="POO\frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmColores.resx">
+    <EmbeddedResource Include="POO\frmColores.resx">
       <DependentUpon>frmColores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMeses.resx">
+    <EmbeddedResource Include="POO\frmMeses.resx">
       <DependentUpon>frmMeses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

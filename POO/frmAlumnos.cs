@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using pryEDRomoL;
 
-namespace pryEpryEDRomoL
+namespace pryEDRomoL
 {
     public partial class frmAlumnos : Form
     {
