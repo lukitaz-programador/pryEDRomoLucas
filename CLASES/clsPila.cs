@@ -10,6 +10,7 @@ namespace pryEDRomoL
 {
     internal class clsPila
     {
+
         private clsNodo pri;
         public clsNodo Primero
         {
