@@ -1,4 +1,5 @@
 ﻿using pryEDRomoL;
+using pryEDRomoL.CLASES;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,8 @@ namespace pryEDRomoL
             InitializeComponent();
         }
 
+        clsListaSimple x = new clsListaSimple();
+
         private void frmListaSimple_Load(object sender, EventArgs e)
         {
             clsArchivo x = new clsArchivo();
@@ -36,6 +39,40 @@ namespace pryEDRomoL
             else
             {
                 btnAgregar.Enabled = true;
+            }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            clsNodo n = new clsNodo();
+            n.Codigo = Convert.ToInt32(txtCodigo.Text);
+            n.Nombre = txtNombre.Text;
+            n.Tramite = txtTramite.Text;
+
+            x.Agregar(n);
+            x.Recorrer(dgvListaSimple);
+            x.Recorrer(lstListaSimple);
+
+            txtCodigo.Text = "";
+            txtNombre.Text = "";
+            txtTramite.Text = "";
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (x.Primero != null)
+            {
+                lblCodigo.Text = x.Primero.Codigo.ToString();
+                lblNombre.Text = x.Primero.Nombre;
+                lblTramite.Text = x.Primero.Tramite;
+
+                x.Eliminar(x.Primero.Codigo);
+                x.Recorrer(dgvListaSimple);
+                //x.Recorrer("ListaSimple.csv");
+                x.Recorrer(lstListaSimple);
+            }
+            else
+            {
             }
         }
     }

@@ -15,6 +15,7 @@ namespace pryEDRomoL
 {
     public partial class frmPrincipal : Form
     {
+        //Constructor del formulario principal
         public frmPrincipal()
         {
             InitializeComponent();
@@ -72,6 +73,18 @@ namespace pryEDRomoL
         {
             frmPilas frmPilas = new frmPilas();
             frmPilas.ShowDialog();
+        }
+
+        private void listaSimpleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListaSimple frmListaSimple = new frmListaSimple();
+            frmListaSimple.ShowDialog();
+        }
+
+        private void listaDobleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListaDoble frmListaDoble = new frmListaDoble();
+            frmListaDoble.ShowDialog();
         }
     }
 }
