@@ -14,13 +14,26 @@ namespace pryEDRomoL
         private Int32 Cod;
         private string Nom;
         private string Tra;
+        private clsNodo pri;
         private clsNodo Sig;
+        private clsNodo ant;
 
         //Propiedades del nodo
         public Int32 Codigo
         {
             get { return Cod; }
             set { Cod = value; }
+        }
+        public clsNodo Primero
+        {
+            get { return pri; }
+            set { pri = value; }
+        }
+
+        public clsNodo Anterior
+        {
+            get { return ant; }
+            set { ant = value; }
         }
 
         public string Nombre

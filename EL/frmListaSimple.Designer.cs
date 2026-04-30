@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.gbEliminado = new System.Windows.Forms.GroupBox();
-            this.cmbCodigo = new System.Windows.Forms.ComboBox();
+            this.cmbListaSimple = new System.Windows.Forms.ComboBox();
             this.lblCod = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.gbNuevo = new System.Windows.Forms.GroupBox();
@@ -56,7 +56,7 @@
             // 
             // gbEliminado
             // 
-            this.gbEliminado.Controls.Add(this.cmbCodigo);
+            this.gbEliminado.Controls.Add(this.cmbListaSimple);
             this.gbEliminado.Controls.Add(this.lblCod);
             this.gbEliminado.Controls.Add(this.btnEliminar);
             this.gbEliminado.Location = new System.Drawing.Point(370, 11);
@@ -66,14 +66,14 @@
             this.gbEliminado.TabStop = false;
             this.gbEliminado.Text = "Elemento a eliminar";
             // 
-            // cmbCodigo
+            // cmbListaSimple
             // 
-            this.cmbCodigo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCodigo.FormattingEnabled = true;
-            this.cmbCodigo.Location = new System.Drawing.Point(55, 70);
-            this.cmbCodigo.Name = "cmbCodigo";
-            this.cmbCodigo.Size = new System.Drawing.Size(97, 21);
-            this.cmbCodigo.TabIndex = 7;
+            this.cmbListaSimple.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbListaSimple.FormattingEnabled = true;
+            this.cmbListaSimple.Location = new System.Drawing.Point(55, 70);
+            this.cmbListaSimple.Name = "cmbListaSimple";
+            this.cmbListaSimple.Size = new System.Drawing.Size(97, 21);
+            this.cmbListaSimple.TabIndex = 7;
             // 
             // lblCod
             // 
@@ -279,6 +279,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDeuda;
         private System.Windows.Forms.PictureBox pbColas;
-        private System.Windows.Forms.ComboBox cmbCodigo;
+        private System.Windows.Forms.ComboBox cmbListaSimple;
     }
 }

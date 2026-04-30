@@ -52,6 +52,7 @@ namespace pryEDRomoL
             x.Agregar(n);
             x.Recorrer(dgvListaSimple);
             x.Recorrer(lstListaSimple);
+            x.Recorrer(cmbListaSimple);
 
             txtCodigo.Text = "";
             txtNombre.Text = "";
@@ -60,20 +61,16 @@ namespace pryEDRomoL
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (x.Primero != null)
-            {
-                lblCodigo.Text = x.Primero.Codigo.ToString();
-                lblNombre.Text = x.Primero.Nombre;
-                lblTramite.Text = x.Primero.Tramite;
+            clsNodo n = new clsNodo();
 
-                x.Eliminar(x.Primero.Codigo);
+            if (n.Primero != null)
+            {
+               // n.Eliminar();
                 x.Recorrer(dgvListaSimple);
-                //x.Recorrer("ListaSimple.csv");
+                x.Recorrer(cmbListaSimple);
                 x.Recorrer(lstListaSimple);
             }
-            else
-            {
-            }
+
         }
     }
 }

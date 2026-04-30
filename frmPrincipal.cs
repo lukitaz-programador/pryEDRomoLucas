@@ -1,6 +1,4 @@
 ﻿using pryEDRomoL;
-using pryEDRomoL;
-using pryEDRomoL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

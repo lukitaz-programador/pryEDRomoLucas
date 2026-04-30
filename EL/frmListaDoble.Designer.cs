@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.gbEliminado = new System.Windows.Forms.GroupBox();
-            this.cmbCodigo = new System.Windows.Forms.ComboBox();
+            this.cmbListaDoble = new System.Windows.Forms.ComboBox();
             this.lblCod = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.gbNuevo = new System.Windows.Forms.GroupBox();
@@ -60,7 +60,7 @@
             // 
             // gbEliminado
             // 
-            this.gbEliminado.Controls.Add(this.cmbCodigo);
+            this.gbEliminado.Controls.Add(this.cmbListaDoble);
             this.gbEliminado.Controls.Add(this.lblCod);
             this.gbEliminado.Controls.Add(this.btnEliminar);
             this.gbEliminado.Location = new System.Drawing.Point(370, 11);
@@ -70,14 +70,14 @@
             this.gbEliminado.TabStop = false;
             this.gbEliminado.Text = "Elemento a eliminar";
             // 
-            // cmbCodigo
+            // cmbListaDoble
             // 
-            this.cmbCodigo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCodigo.FormattingEnabled = true;
-            this.cmbCodigo.Location = new System.Drawing.Point(61, 27);
-            this.cmbCodigo.Name = "cmbCodigo";
-            this.cmbCodigo.Size = new System.Drawing.Size(97, 21);
-            this.cmbCodigo.TabIndex = 7;
+            this.cmbListaDoble.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbListaDoble.FormattingEnabled = true;
+            this.cmbListaDoble.Location = new System.Drawing.Point(61, 27);
+            this.cmbListaDoble.Name = "cmbListaDoble";
+            this.cmbListaDoble.Size = new System.Drawing.Size(97, 21);
+            this.cmbListaDoble.TabIndex = 7;
             // 
             // lblCod
             // 
@@ -147,7 +147,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(62, 20);
             this.txtCodigo.TabIndex = 1;
-            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged_1);
             // 
             // txtNombre
             // 
@@ -164,6 +164,7 @@
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblNombre
             // 
@@ -306,7 +307,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbEliminado;
-        private System.Windows.Forms.ComboBox cmbCodigo;
+        private System.Windows.Forms.ComboBox cmbListaDoble;
         private System.Windows.Forms.Label lblCod;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.GroupBox gbNuevo;

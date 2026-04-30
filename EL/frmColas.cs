@@ -1,5 +1,4 @@
 ﻿using pryEDRomoL;
-using pryEDRomoL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,10 +63,6 @@ namespace pryEDRomoL
         {
             if (FilaDePersonas.Primero != null)
             {
-                lblCodRdo.Text = FilaDePersonas.Primero.Codigo.ToString();
-                lblNomRdo.Text = FilaDePersonas.Primero.Nombre;
-                lblTramiteRdo.Text = FilaDePersonas.Primero.Tramite;
-
                 FilaDePersonas.Eliminar();
                 FilaDePersonas.Recorrer(dgvCola);
                 FilaDePersonas.Recorrer("Cola.csv");
