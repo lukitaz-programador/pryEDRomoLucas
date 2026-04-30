@@ -1,23 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace pryEDRomoL.CLASES
 {
-    //la clase lista simple es una clase que contiene un nodo y un metodo para agregar, eliminar y recorrer la lista
-    class clsListaSimple
+    class clsListaDoble
     {
-        //la clase nodo es una clase que contiene un codigo, un nombre, un tramite y un nodo siguiente
         private clsNodo pri;
-        //la propiedad pri es una propiedad que devuelve el nodo pri de la lista
+        private clsNodo ult;
+
         public clsNodo primero
         {
             get { return pri; }
             set { pri = value; }
         }
+        public clsNodo ultimo
+        {
+            get { return ult; }
+            set { ult = value; }
+        }
+
         public void Recorrer(DataGridView Grilla)
         {
             clsNodo aux = pri;
@@ -49,33 +56,14 @@ namespace pryEDRomoL.CLASES
                 Combo.Items.Add(aux.Codigo + " - " + aux.Nombre + " - " + aux.Tramite);
                 aux = aux.Siguiente;
             }
-        } 
-
-        public void Eliminar(Int32 Codigo)
-        {
-            if (pri.Codigo == Codigo)
-            {
-                pri = pri.Siguiente;
-            }
-            else
-            {
-                clsNodo aux = pri;
-                clsNodo aux2 = pri;
-                while (aux.Codigo != Codigo)
-                {
-                    aux2 = aux;
-                    aux = aux.Siguiente;
-                }
-                aux2.Siguiente = aux.Siguiente;
-            }
         }
-
         public void Agregar(clsNodo nuevo)
         {
             //verifica que la lista no este vacia, si lo esta el nuevo nodo se convierte en el pri
             if (pri == null)
             {
                 pri = nuevo;
+                ultimo = nuevo;
             }
             //si la lista no esta vacia, se compara el codigo del nuevo nodo con el codigo del primer nodo
             else
@@ -83,25 +71,45 @@ namespace pryEDRomoL.CLASES
                 if (nuevo.Codigo <= pri.Codigo)
                 {
                     nuevo.Siguiente = pri;
+                    pri.Anterior = nuevo;
                     pri = nuevo;
                 }
                 //si el codigo del nuevo nodo es mayor que el codigo del primer nodo,
                 //se recorre la lista hasta encontrar el lugar donde se debe insertar el nuevo nodo
                 else
-                { 
-                    clsNodo aux = pri;
-                    clsNodo ant = pri;
-                    //se recorre la lista hasta encontrar el lugar donde se debe insertar el nuevo nodo
-                    while (nuevo.Codigo > aux.Codigo)
+                {
+                    if (nuevo.Codigo <= pri.Codigo)
                     {
-                        ant = aux;
-                        aux = aux.Siguiente;
-                        //si se llega al final de la lista, se sale del ciclo
-                        if (aux == null) break;
+                        nuevo.Siguiente = pri;
+                        pri.Anterior = nuevo;
+                        pri = nuevo;
                     }
-                    //si se llega al final de la lista, se inserta el nuevo nodo al final de la lista
-                    nuevo.Siguiente = aux;
-                    ant.Siguiente = nuevo;
+                    //se recorre la lista hasta encontrar el lugar donde se debe insertar el nuevo nodo
+                    else 
+                    {
+                        if (nuevo.Codigo >= ultimo.Codigo)
+                        {
+                            ultimo.Siguiente = nuevo;
+                            nuevo.Anterior = ultimo;
+                            ultimo = nuevo;
+                        }
+                        else
+                        {
+                            clsNodo aux = pri;
+                            clsNodo ant = null;
+                            while (aux.Codigo > aux.Codigo)
+                            {
+                                ant = aux;
+                                aux = aux.Siguiente;
+                                //si se llega al final de la lista, se sale del ciclo
+                                if (aux == null) break;
+                            }
+                            ant.Siguiente = nuevo;
+                            nuevo.Anterior = ant;
+                            nuevo.Siguiente = aux;
+                            aux.Anterior = nuevo;
+                        }
+                    }
                 }
             }
         }

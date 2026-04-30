@@ -20,28 +20,28 @@ namespace pryEDRomoL
 
         public void Agregar(clsNodo nuevo)
         {
-            if (Primero == null)
+            if (pri == null)
             {
-                Primero = nuevo;
+                pri = nuevo;
             }
             else
             {
-                nuevo.Siguiente = Primero;
-                Primero = nuevo;
+                nuevo.Siguiente = pri;
+                pri = nuevo;
             }
         }
 
         public void Eliminar()
         {
-            if (Primero != null)
+            if (pri != null)
             {
-                Primero = Primero.Siguiente;
+                pri = pri.Siguiente;
             }
         }
 
         public void Recorrer(DataGridView Grilla)
         {
-            clsNodo aux = Primero;
+            clsNodo aux = pri;
             Grilla.Rows.Clear();
 
             while (aux != null)
@@ -53,7 +53,7 @@ namespace pryEDRomoL
 
         public void Recorrer(ListBox Lista)
         {
-            clsNodo aux = Primero;
+            clsNodo aux = pri;
             Lista.Items.Clear();
 
             while (aux != null)
@@ -65,7 +65,7 @@ namespace pryEDRomoL
 
         public void Recorrer(ComboBox Combo)
         {
-            clsNodo aux = Primero;
+            clsNodo aux = pri;
             Combo.Items.Clear();
 
             while (aux != null)
@@ -77,7 +77,7 @@ namespace pryEDRomoL
 
         public void Recorrer(String NomArchi)
         {
-            clsNodo aux = Primero;
+            clsNodo aux = pri;
             StreamWriter AD = new StreamWriter(NomArchi, false, Encoding.UTF8);
             AD.WriteLine("Lista de personas");
             AD.WriteLine("Codigo;Nombre;Tramite");

@@ -34,9 +34,9 @@ namespace pryEDRomoL
 
         public void Agregar(clsNodo nuevo)
         {
-            if (Primero == null)
+            if (pri == null)
             {
-                Primero = nuevo;
+                pri = nuevo;
                 Ultimo = nuevo;
             }
             else
@@ -48,23 +48,23 @@ namespace pryEDRomoL
 
         public void Eliminar()
         {
-            if (Primero != null) // Si la cola tiene nodos
+            if (pri != null) // Si la cola tiene nodos
             {
-                if (Primero == Ultimo) // Caso A: Hay un solo nodo
+                if (pri == Ultimo) // Caso A: Hay un solo nodo
                 {
-                    Primero = null;
+                    pri = null;
                     Ultimo = null;
                 }
                 else // Caso B: Hay más de un nodo
                 {
-                    Primero = Primero.Siguiente; // El segundo pasa a ser el primero
+                    pri = pri.Siguiente; // El segundo pasa a ser el pri
                 }
             }
         }
 
         public void Recorrer(DataGridView Grilla)
         {
-            clsNodo aux = Primero;
+            clsNodo aux = pri;
             Grilla.Rows.Clear();
 
             while (aux != null)
@@ -76,7 +76,7 @@ namespace pryEDRomoL
 
         public void Recorrer(ListBox Lista)
         {
-            clsNodo aux = Primero;
+            clsNodo aux = pri;
             Lista.Items.Clear();
 
             while (aux != null)
@@ -88,7 +88,7 @@ namespace pryEDRomoL
 
         public void Recorrer(ComboBox Combo)
         {
-            clsNodo aux = Primero;
+            clsNodo aux = pri;
             Combo.Items.Clear();
 
             while (aux != null)
