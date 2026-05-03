@@ -23,7 +23,7 @@ namespace pryEDRomoL
         {
             clsArchivo x = new clsArchivo();
             x.NomArchi = "Pila.csv";
-            if (File.Exists(x.NomArchi)) x.Recorrer(dgvPila);
+            //if (File.Exists(x.NomArchi)) x.Recorrer(dgvPila);
             btnAgregar.Enabled = false;
         }
 

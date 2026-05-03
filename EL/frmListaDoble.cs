@@ -21,15 +21,16 @@ namespace pryEDRomoL
         }
 
 
-        clsListaSimple x = new clsListaSimple();
+        clsListaDoble x = new clsListaDoble();
 
         private void frmListaDoble_Load(object sender, EventArgs e)
         {
             clsArchivo x = new clsArchivo();
             x.NomArchi = "ListaDoble.csv";
-            if (File.Exists(x.NomArchi)) x.Recorrer(dgvListaDoble);
+            //if (File.Exists(x.NomArchi)) x.Recorrer(dgvListaDoble);
             btnAgregar.Enabled = false;
         }
+
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
@@ -55,9 +56,6 @@ namespace pryEDRomoL
             x.Recorrer(lstListaDoble);
             x.Recorrer(cmbListaDoble);
 
-            txtCodigo.Text = "";
-            txtNombre.Text = "";
-            txtTramite.Text = "";
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

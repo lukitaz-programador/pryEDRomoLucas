@@ -14,7 +14,6 @@ namespace pryEDRomoL
         private Int32 Cod;
         private string Nom;
         private string Tra;
-        private clsNodo pri;
         private clsNodo Sig;
         private clsNodo ant;
 
@@ -23,11 +22,6 @@ namespace pryEDRomoL
         {
             get { return Cod; }
             set { Cod = value; }
-        }
-        public clsNodo Primero
-        {
-            get { return pri; }
-            set { pri = value; }
         }
 
         public clsNodo Anterior

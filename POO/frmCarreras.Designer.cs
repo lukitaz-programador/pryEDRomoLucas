@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCarreras));
             this.lstCarreras = new System.Windows.Forms.ListBox();
-            this.btnGrabar = new System.Windows.Forms.Button();
+            this.btnRecorrer = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.txtCarreras = new System.Windows.Forms.TextBox();
             this.lblCarrera = new System.Windows.Forms.Label();
@@ -44,15 +44,15 @@
             this.lstCarreras.Size = new System.Drawing.Size(254, 225);
             this.lstCarreras.TabIndex = 4;
             // 
-            // btnGrabar
+            // btnRecorrer
             // 
-            this.btnGrabar.Location = new System.Drawing.Point(147, 63);
-            this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(98, 23);
-            this.btnGrabar.TabIndex = 2;
-            this.btnGrabar.Text = "Grabar";
-            this.btnGrabar.UseVisualStyleBackColor = true;
-            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            this.btnRecorrer.Location = new System.Drawing.Point(147, 63);
+            this.btnRecorrer.Name = "btnRecorrer";
+            this.btnRecorrer.Size = new System.Drawing.Size(98, 23);
+            this.btnRecorrer.TabIndex = 2;
+            this.btnRecorrer.Text = "Recorrer";
+            this.btnRecorrer.UseVisualStyleBackColor = true;
+            this.btnRecorrer.Click += new System.EventHandler(this.btnRecorrer_Click);
             // 
             // btnLimpiar
             // 
@@ -89,7 +89,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(278, 337);
             this.Controls.Add(this.lstCarreras);
-            this.Controls.Add(this.btnGrabar);
+            this.Controls.Add(this.btnRecorrer);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.txtCarreras);
             this.Controls.Add(this.lblCarrera);
@@ -105,7 +105,7 @@
         #endregion
 
         private System.Windows.Forms.ListBox lstCarreras;
-        private System.Windows.Forms.Button btnGrabar;
+        private System.Windows.Forms.Button btnRecorrer;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.TextBox txtCarreras;
         private System.Windows.Forms.Label lblCarrera;

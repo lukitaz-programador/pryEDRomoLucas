@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmColores));
             this.lstColores = new System.Windows.Forms.ListBox();
-            this.btnGrabar = new System.Windows.Forms.Button();
+            this.btnRecorrer = new System.Windows.Forms.Button();
             this.btnListar = new System.Windows.Forms.Button();
             this.txtColores = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -44,16 +44,16 @@
             this.lstColores.Size = new System.Drawing.Size(302, 277);
             this.lstColores.TabIndex = 9;
             // 
-            // btnGrabar
+            // btnRecorrer
             // 
-            this.btnGrabar.Enabled = false;
-            this.btnGrabar.Location = new System.Drawing.Point(238, 62);
-            this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(75, 23);
-            this.btnGrabar.TabIndex = 8;
-            this.btnGrabar.Text = "Grabar";
-            this.btnGrabar.UseVisualStyleBackColor = true;
-            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            this.btnRecorrer.Enabled = false;
+            this.btnRecorrer.Location = new System.Drawing.Point(238, 62);
+            this.btnRecorrer.Name = "btnRecorrer";
+            this.btnRecorrer.Size = new System.Drawing.Size(75, 23);
+            this.btnRecorrer.TabIndex = 8;
+            this.btnRecorrer.Text = "Recorrer";
+            this.btnRecorrer.UseVisualStyleBackColor = true;
+            this.btnRecorrer.Click += new System.EventHandler(this.btnRecorrer_Click);
             // 
             // btnListar
             // 
@@ -89,7 +89,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(326, 396);
             this.Controls.Add(this.lstColores);
-            this.Controls.Add(this.btnGrabar);
+            this.Controls.Add(this.btnRecorrer);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.txtColores);
             this.Controls.Add(this.lblNombre);
@@ -104,7 +104,7 @@
         #endregion
 
         private System.Windows.Forms.ListBox lstColores;
-        private System.Windows.Forms.Button btnGrabar;
+        private System.Windows.Forms.Button btnRecorrer;
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.TextBox txtColores;
         private System.Windows.Forms.Label lblNombre;

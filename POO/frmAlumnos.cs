@@ -21,13 +21,13 @@ namespace pryEDRomoL
 
         private void frmAlumnos_Load(object sender, EventArgs e)
         {
-            clsArchivo objGrabar = new clsArchivo();
-            objGrabar.NomArchi = "Carreras.csv";
-            objGrabar.Recorrer(cmbCarrera);
+            clsArchivo objRecorrer = new clsArchivo();
+            objRecorrer.NomArchi = "Carreras.csv";
+            //objRecorrer.Recorrer(cmbCarrera);
 
             clsArchivo objAlumnos = new clsArchivo();
-            if (File.Exists(objAlumnos.NomArchi)) objAlumnos.Recorrer(dgvAlumnos);
-            btnGrabar.Enabled = false;
+            //if (File.Exists(objAlumnos.NomArchi)) objAlumnos.Recorrer(dgvAlumnos);
+            btnRecorrer.Enabled = false;
 
         }
 
@@ -35,27 +35,27 @@ namespace pryEDRomoL
         {
             if (txtNombre.Text != "" && txtNombre.Text != "" && cmbCarrera.Text != "")
             {
-                btnGrabar.Enabled = false;
+                btnRecorrer.Enabled = false;
             }
             else
             {
-                btnGrabar.Enabled = true;
+                btnRecorrer.Enabled = true;
             }
         }
 
-        private void btnGrabar_Click(object sender, EventArgs e)
+        private void btnRecorrer_Click(object sender, EventArgs e)
         {
             clsArchivo objRecorrer = new clsArchivo();
             objRecorrer.NomArchi = "Alumnos.csv";
-            objRecorrer.Grabar(txtCodigo.Text, txtNombre.Text, cmbCarrera.Text);
-            objRecorrer.Recorrer(dgvAlumnos);
+            objRecorrer.Recorrer(txtCodigo.Text, txtNombre.Text, cmbCarrera.Text);
+            //objRecorrer.Recorrer(dgvAlumnos);
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             clsArchivo x = new clsArchivo();
             x.NomArchi = ("Alumnos.csv");
-            x.LimpiarTodo();
+            //x.LimpiarTodo();
 
             txtCodigo.Text = "";
             txtNombre.Text = "";

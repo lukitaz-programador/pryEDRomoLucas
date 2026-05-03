@@ -18,12 +18,12 @@ namespace pryEDRomoL
             InitializeComponent();
         }
 
-        private void btnGrabar_Click(object sender, EventArgs e)
+        private void btnRecorrer_Click(object sender, EventArgs e)
         {
             clsArchivo x = new clsArchivo();
             x.NomArchi = ("Colores.csv");
-            x.Grabar(txtColores.Text);
-            x.Recorrer(lstColores);
+            x.Recorrer(txtColores.Text);
+            //x.Recorrer(lstColores);
 
             txtColores.Text = "";
         }
@@ -32,25 +32,25 @@ namespace pryEDRomoL
         {
             if (txtColores.Text == "")
             {
-                btnGrabar.Enabled = false;
+                btnRecorrer.Enabled = false;
             }
             else
             {
-                btnGrabar.Enabled = true;
+                btnRecorrer.Enabled = true;
             }
         }
 
         private void frmColores_Load(object sender, EventArgs e)
         {
-            btnGrabar.Enabled = false;
+            btnRecorrer.Enabled = false;
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             clsArchivo x = new clsArchivo();
             x.NomArchi = ("Careras.csv");
-            x.LimpiarTodo();
-            x.Recorrer(lstColores);
+            //x.LimpiarTodo();
+            //x.Recorrer(lstColores);
 
             txtColores.Text = "";
         }

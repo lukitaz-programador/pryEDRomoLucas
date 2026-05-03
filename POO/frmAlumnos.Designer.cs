@@ -33,7 +33,7 @@
             this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCarrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnGrabar = new System.Windows.Forms.Button();
+            this.btnRecorrer = new System.Windows.Forms.Button();
             this.lblCarrera = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -71,16 +71,16 @@
             this.colCarrera.HeaderText = "Carrera";
             this.colCarrera.Name = "colCarrera";
             // 
-            // btnGrabar
+            // btnRecorrer
             // 
-            this.btnGrabar.Enabled = false;
-            this.btnGrabar.Location = new System.Drawing.Point(264, 145);
-            this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(97, 23);
-            this.btnGrabar.TabIndex = 14;
-            this.btnGrabar.Text = "Grabar";
-            this.btnGrabar.UseVisualStyleBackColor = true;
-            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            this.btnRecorrer.Enabled = false;
+            this.btnRecorrer.Location = new System.Drawing.Point(264, 145);
+            this.btnRecorrer.Name = "btnRecorrer";
+            this.btnRecorrer.Size = new System.Drawing.Size(97, 23);
+            this.btnRecorrer.TabIndex = 14;
+            this.btnRecorrer.Text = "Recorrer";
+            this.btnRecorrer.UseVisualStyleBackColor = true;
+            this.btnRecorrer.Click += new System.EventHandler(this.btnRecorrer_Click);
             // 
             // lblCarrera
             // 
@@ -154,7 +154,7 @@
             this.Controls.Add(this.cmbCarrera);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.dgvAlumnos);
-            this.Controls.Add(this.btnGrabar);
+            this.Controls.Add(this.btnRecorrer);
             this.Controls.Add(this.lblCarrera);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
@@ -172,7 +172,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvAlumnos;
-        private System.Windows.Forms.Button btnGrabar;
+        private System.Windows.Forms.Button btnRecorrer;
         private System.Windows.Forms.Label lblCarrera;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;

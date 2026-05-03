@@ -12,36 +12,52 @@ namespace pryEDRomoL
     {
 
         private clsNodo pri;
+
         public clsNodo Primero
         {
             get { return pri; }
             set { pri = value; }
         }
 
-        public void Agregar(clsNodo nuevo)
+        public void Agregar(clsNodo Nuevo)
         {
-            if (pri == null)
+            if (Primero == null)
             {
-                pri = nuevo;
+                Primero = Nuevo;
+
             }
             else
             {
-                nuevo.Siguiente = pri;
-                pri = nuevo;
+                Nuevo.Siguiente = Primero;
+                Primero = Nuevo;
             }
         }
 
-        public void Eliminar()
+
+        public void Eliminar(clsNodo eliminado)
         {
-            if (pri != null)
+            if (Primero != null)
             {
-                pri = pri.Siguiente;
+                Primero = Primero.Siguiente;
             }
         }
+        public void Recorrer()
+        {
+            clsNodo aux = Primero;
+            StreamWriter AD = new StreamWriter("Cola.txt", true, Encoding.UTF8);
+            AD.WriteLine("Lista de espera\n");
 
+            AD.WriteLine("Codigo;Nombre;Tramite");
+            while (aux != null)
+            {
+                AD.WriteLine(aux.Codigo + ";" + aux.Nombre + ";" + aux.Tramite);
+                aux = aux.Siguiente;
+            }
+
+        }
         public void Recorrer(DataGridView Grilla)
         {
-            clsNodo aux = pri;
+            clsNodo aux = Primero;
             Grilla.Rows.Clear();
 
             while (aux != null)
@@ -49,49 +65,31 @@ namespace pryEDRomoL
                 Grilla.Rows.Add(aux.Codigo, aux.Nombre, aux.Tramite);
                 aux = aux.Siguiente;
             }
-        }
 
-        public void Recorrer(ListBox Lista)
+        }
+        public void Recorrer(ComboBox combo)
         {
-            clsNodo aux = pri;
-            Lista.Items.Clear();
+            clsNodo aux = Primero;
+            combo.Items.Clear();
 
             while (aux != null)
             {
-                Lista.Items.Add(aux.Codigo + "-" + aux.Nombre + "-" + aux.Tramite);
+                combo.Items.Add(aux.Nombre);
                 aux = aux.Siguiente;
             }
-        }
 
-        public void Recorrer(ComboBox Combo)
+        }
+        public void Recorrer(ListBox combo)
         {
-            clsNodo aux = pri;
-            Combo.Items.Clear();
+            clsNodo aux = Primero;
+            combo.Items.Clear();
 
             while (aux != null)
             {
-                Combo.Items.Add(aux.Codigo + "-" + aux.Nombre + "-" + aux.Tramite);
+                combo.Items.Add(aux.Nombre);
                 aux = aux.Siguiente;
             }
-        }
 
-        public void Recorrer(String NomArchi)
-        {
-            clsNodo aux = pri;
-            StreamWriter AD = new StreamWriter(NomArchi, false, Encoding.UTF8);
-            AD.WriteLine("Lista de personas");
-            AD.WriteLine("Codigo;Nombre;Tramite");
-
-            while(aux != null)
-            {
-                AD.Write(aux.Codigo);
-                AD.Write(";");
-                AD.Write(aux.Nombre);
-                AD.Write(";");
-                AD.WriteLine(aux.Tramite);
-                aux = aux.Siguiente;
-            }
-            AD.Close();
         }
     }
 }

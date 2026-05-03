@@ -102,7 +102,6 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(62, 20);
             this.txtCodigo.TabIndex = 1;
-            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // lblCodigo
             // 
@@ -288,7 +287,6 @@
             this.Name = "frmColas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructura Dinámica Lineal - Cola";
-            this.Load += new System.EventHandler(this.frmColas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCola)).EndInit();
             this.gbListado.ResumeLayout(false);
             this.gbNuevo.ResumeLayout(false);

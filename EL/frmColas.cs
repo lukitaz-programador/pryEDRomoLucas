@@ -15,64 +15,46 @@ namespace pryEDRomoL
 {
     public partial class frmColas : Form
     {
+
+        clsCola x = new clsCola();
         public frmColas()
         {
             InitializeComponent();
         }
 
-        clsCola FilaDePersonas = new clsCola();
-
-        private void frmColas_Load(object sender, EventArgs e)
-        {
-            clsArchivo x = new clsArchivo();
-            x.NomArchi = "Cola.csv";
-            if (File.Exists(x.NomArchi)) x.Recorrer(dgvCola);
-            btnAgregar.Enabled = false;
-        }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            clsNodo Persona = new clsNodo();
-            Persona.Codigo = Convert.ToInt32(txtCodigo.Text);
-            Persona.Nombre = txtNombre.Text;
-            Persona.Tramite = txtTramite.Text;
+            clsNodo n = new clsNodo();
+            n.Codigo = Convert.ToInt32(txtCodigo.Text);
+            n.Nombre = txtNombre.Text;
+            n.Tramite = txtTramite.Text;
+            x.Agregar(n);
+            x.Recorrer(dgvCola);
+            x.Recorrer(lstListadoCola);
 
-            FilaDePersonas.Agregar(Persona);
-            FilaDePersonas.Recorrer(dgvCola);
-            FilaDePersonas.Recorrer("Cola.csv");
-            FilaDePersonas.Recorrer(lstListadoCola);
-
-            //Limpio los controles
-            txtCodigo.Text = "";
-            txtNombre.Text = "";
-            txtTramite.Text = "";
-        }
-
-        private void txtCodigo_TextChanged(object sender, EventArgs e)
-        {
-            if (txtCodigo.Text != "" && txtNombre.Text != "" && txtTramite.Text != "")
-            {
-                btnAgregar.Enabled = false;
-            }
-            else
-            {
-                btnAgregar.Enabled = true;
-            }
+            txtCodigo.Clear();
+            txtNombre.Clear();
+            txtTramite.Clear();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (FilaDePersonas.Primero != null)
+            if (x.Primero != null)
             {
-                FilaDePersonas.Eliminar();
-                FilaDePersonas.Recorrer(dgvCola);
-                FilaDePersonas.Recorrer("Cola.csv");
-                FilaDePersonas.Recorrer(lstListadoCola);
+
+                lblCodigo.Text = Convert.ToString(x.Primero.Codigo);
+                lblNombre.Text = x.Primero.Nombre;
+                lblTramite.Text = x.Primero.Tramite;
+                x.Eliminar(x.Primero);
+                x.Recorrer(dgvCola);
+                x.Recorrer(lstListadoCola);
             }
             else
             {
-                lblCodRdo.Text = "";
-                lblNomRdo.Text = "";
-                lblTramiteRdo.Text = "";
+                MessageBox.Show("No hay elementos para eliminar.");
+                lblTramite.Text = "";
+                lblNombre.Text = "";
+                lblCodigo.Text = "";
             }
         }
     }

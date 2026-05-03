@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,103 +8,118 @@ using System.Windows.Forms;
 
 namespace pryEDRomoL.CLASES
 {
-    //la clase lista simple es una clase que contiene un nodo y un metodo para agregar, eliminar y recorrer la lista
-    class clsListaSimple
+
+    internal class clsListaSimple
     {
-        //la clase nodo es una clase que contiene un codigo, un nombre, un tramite y un nodo siguiente
+        //Formada por nodos secuenciales, los datos se ordenan segun procedimientos del desarrollador 
+        //Campos de la clase
         private clsNodo pri;
-        //la propiedad pri es una propiedad que devuelve el nodo pri de la lista
-        public clsNodo primero
+
+        //Propiedades
+        public clsNodo Primero
         {
             get { return pri; }
             set { pri = value; }
         }
-        public void Recorrer(DataGridView Grilla)
-        {
-            clsNodo aux = pri;
-            Grilla.Rows.Clear();
-            while (aux != null)
-            {
-                Grilla.Rows.Add(aux.Codigo, aux.Nombre, aux.Tramite);
-                aux = aux.Siguiente;
-            }
-        }
 
-        public void Recorrer(ListBox Lista)
+        public void Agregar(clsNodo Nuevo)
         {
-            clsNodo aux = pri;
-            Lista.Items.Clear();
-            while (aux != null)
+            if (Primero == null)
             {
-                Lista.Items.Add(aux.Codigo + " - " + aux.Nombre + " - " + aux.Tramite);
-                aux = aux.Siguiente;
-            }
-        }
-
-        public void Recorrer(ComboBox Combo)
-        {
-            clsNodo aux = pri;
-            Combo.Items.Clear();
-            while (aux != null)
-            {
-                Combo.Items.Add(aux.Codigo + " - " + aux.Nombre + " - " + aux.Tramite);
-                aux = aux.Siguiente;
-            }
-        } 
-
-        public void Eliminar(Int32 Codigo)
-        {
-            if (pri.Codigo == Codigo)
-            {
-                pri = pri.Siguiente;
+                Primero = Nuevo;
             }
             else
             {
-                clsNodo aux = pri;
-                clsNodo aux2 = pri;
-                while (aux.Codigo != Codigo)
+                //Si el nuevo dato es menos al que ya existe 
+                if (Nuevo.Codigo < Primero.Codigo)
                 {
-                    aux2 = aux;
-                    aux = aux.Siguiente;
+                    Nuevo.Siguiente = Primero;
+                    Primero = Nuevo;
                 }
-                aux2.Siguiente = aux.Siguiente;
-            }
-        }
-
-        public void Agregar(clsNodo nuevo)
-        {
-            //verifica que la lista no este vacia, si lo esta el nuevo nodo se convierte en el pri
-            if (pri == null)
-            {
-                pri = nuevo;
-            }
-            //si la lista no esta vacia, se compara el codigo del nuevo nodo con el codigo del primer nodo
-            else
-            {
-                if (nuevo.Codigo <= pri.Codigo)
-                {
-                    nuevo.Siguiente = pri;
-                    pri = nuevo;
-                }
-                //si el codigo del nuevo nodo es mayor que el codigo del primer nodo,
-                //se recorre la lista hasta encontrar el lugar donde se debe insertar el nuevo nodo
+                //Cuando el nuevo dato se encuentre entre dos numeros
                 else
-                { 
-                    clsNodo aux = pri;
-                    clsNodo ant = pri;
-                    //se recorre la lista hasta encontrar el lugar donde se debe insertar el nuevo nodo
-                    while (nuevo.Codigo > aux.Codigo)
+                {
+                    clsNodo aux = Primero;
+                    clsNodo ant = aux; //antes de pasar al siguiente numero guardo el dato anterior
+                    while (aux.Codigo < Nuevo.Codigo)
                     {
                         ant = aux;
                         aux = aux.Siguiente;
-                        //si se llega al final de la lista, se sale del ciclo
                         if (aux == null) break;
                     }
-                    //si se llega al final de la lista, se inserta el nuevo nodo al final de la lista
-                    nuevo.Siguiente = aux;
-                    ant.Siguiente = nuevo;
+                    ant.Siguiente = Nuevo;
+                    Nuevo.Siguiente = aux;
                 }
+
             }
+        }
+        public void Eliminar(Int32 Codigo)
+        {
+            if (Primero.Codigo == Codigo)
+            {
+                Primero = Primero.Siguiente;
+            }
+            else
+            {
+                clsNodo Aux = Primero;
+                clsNodo Ant = Primero;
+                while (Aux.Codigo != Codigo)
+                {
+                    Ant = Aux;
+                    Aux = Aux.Siguiente;
+                }
+                Ant.Siguiente = Aux.Siguiente;
+            }
+        }
+
+        public void Recorrer(DataGridView Grilla)
+        {
+            clsNodo Aux = Primero;
+            Grilla.Rows.Clear();
+            while (Aux != null)
+            {
+                Grilla.Rows.Add(Aux.Codigo, Aux.Nombre, Aux.Tramite);
+                Aux = Aux.Siguiente;
+            }
+
+        }
+        public void Recorrer(ListBox Lista)
+        {
+            clsNodo Aux = Primero;
+            Lista.Items.Clear();
+            while (Aux != null)
+            {
+                Lista.Items.Add(Aux.Nombre);
+                Aux = Aux.Siguiente;
+            }
+
+        }
+        public void Recorrer(ComboBox Combo)
+        {
+            clsNodo Aux = Primero;
+            Combo.Items.Clear();
+            while (Aux != null)
+            {
+                Combo.Items.Add(Aux.Tramite);
+                Aux = Aux.Siguiente;
+            }
+
+        }
+        public void Recorrer(string NombreArchivo)
+        {
+            clsNodo Aux = Primero;
+            StreamWriter AD = new StreamWriter(NombreArchivo, false, Encoding.UTF8);
+            AD.WriteLine("Código; Nombre; Trámite");
+            while (Aux != null)
+            {
+                AD.Write(Aux.Codigo);
+                AD.Write(";");
+                AD.Write(Aux.Nombre);
+                AD.Write(";");
+                AD.WriteLine(Aux.Tramite);
+                Aux = Aux.Siguiente;
+            }
+            AD.Close();
         }
     }
 }

@@ -32,7 +32,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtMeses = new System.Windows.Forms.TextBox();
             this.btnListar = new System.Windows.Forms.Button();
-            this.btnGrabar = new System.Windows.Forms.Button();
+            this.btnRecorrer = new System.Windows.Forms.Button();
             this.lstMeses = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
@@ -63,16 +63,16 @@
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
             // 
-            // btnGrabar
+            // btnRecorrer
             // 
-            this.btnGrabar.Enabled = false;
-            this.btnGrabar.Location = new System.Drawing.Point(226, 68);
-            this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(75, 23);
-            this.btnGrabar.TabIndex = 3;
-            this.btnGrabar.Text = "Grabar";
-            this.btnGrabar.UseVisualStyleBackColor = true;
-            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            this.btnRecorrer.Enabled = false;
+            this.btnRecorrer.Location = new System.Drawing.Point(226, 68);
+            this.btnRecorrer.Name = "btnRecorrer";
+            this.btnRecorrer.Size = new System.Drawing.Size(75, 23);
+            this.btnRecorrer.TabIndex = 3;
+            this.btnRecorrer.Text = "Recorrer";
+            this.btnRecorrer.UseVisualStyleBackColor = true;
+            this.btnRecorrer.Click += new System.EventHandler(this.btnRecorrer_Click);
             // 
             // lstMeses
             // 
@@ -89,7 +89,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(313, 334);
             this.Controls.Add(this.lstMeses);
-            this.Controls.Add(this.btnGrabar);
+            this.Controls.Add(this.btnRecorrer);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.txtMeses);
             this.Controls.Add(this.lblNombre);
@@ -106,7 +106,7 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtMeses;
         private System.Windows.Forms.Button btnListar;
-        private System.Windows.Forms.Button btnGrabar;
+        private System.Windows.Forms.Button btnRecorrer;
         private System.Windows.Forms.ListBox lstMeses;
     }
 }

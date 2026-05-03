@@ -20,57 +20,70 @@ namespace pryEDRomoL
             InitializeComponent();
         }
 
-        clsListaSimple x = new clsListaSimple();
+        clsListaSimple objLista = new clsListaSimple();
 
         private void frmListaSimple_Load(object sender, EventArgs e)
         {
-            clsArchivo x = new clsArchivo();
-            x.NomArchi = "ListaSimple.csv";
-            if (File.Exists(x.NomArchi)) x.Recorrer(dgvListaSimple);
+
             btnAgregar.Enabled = false;
         }
 
-        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        private void ValidarDatos()
         {
             if (txtCodigo.Text != "" && txtNombre.Text != "" && txtTramite.Text != "")
             {
-                btnAgregar.Enabled = false;
+                btnAgregar.Enabled = true;
             }
             else
             {
-                btnAgregar.Enabled = true;
+                btnAgregar.Enabled = false;
             }
+        }
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            clsNodo n = new clsNodo();
-            n.Codigo = Convert.ToInt32(txtCodigo.Text);
-            n.Nombre = txtNombre.Text;
-            n.Tramite = txtTramite.Text;
+            clsNodo x = new clsNodo();
+            x.Codigo = Convert.ToInt32(txtCodigo.Text);
+            x.Nombre = txtNombre.Text;
+            x.Tramite = txtTramite.Text;
 
-            x.Agregar(n);
-            x.Recorrer(dgvListaSimple);
-            x.Recorrer(lstListaSimple);
-            x.Recorrer(cmbListaSimple);
+            objLista.Agregar(x);
+            objLista.Recorrer(dgvListaSimple);
+            //Esto no es necesario pero se hrealiza para ver si funciona el programa y el método
+            objLista.Recorrer("ListaSimple.csv");
+            objLista.Recorrer(lstListaSimple);
+            objLista.Recorrer(cmbListaSimple);
 
+            //Limpio los controles
             txtCodigo.Text = "";
             txtNombre.Text = "";
             txtTramite.Text = "";
         }
 
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
+        }
+
+        private void txtTramite_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
+        }
+
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            clsNodo n = new clsNodo();
 
-            if (n.Primero != null)
-            {
-               // n.Eliminar();
-                x.Recorrer(dgvListaSimple);
-                x.Recorrer(cmbListaSimple);
-                x.Recorrer(lstListaSimple);
-            }
+            objLista.Eliminar(Convert.ToInt32(cmbListaSimple.Text));
 
+        }
+
+        private void cmbCodigo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
         }
     }
 }

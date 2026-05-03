@@ -18,12 +18,12 @@ namespace pryEDRomoL
             InitializeComponent();
         }
 
-        private void btnGrabar_Click(object sender, EventArgs e)
+        private void btnRecorrer_Click(object sender, EventArgs e)
         {
             clsArchivo objRecorrer = new clsArchivo();
             objRecorrer.NomArchi = "Clientes.csv";
-            objRecorrer.Grabar(txtCodigo.Text, txtNombre.Text, txtDeuda.Text);
-            objRecorrer.Recorrer(dgvClientes);
+            objRecorrer.Recorrer(txtCodigo.Text, txtNombre.Text, txtDeuda.Text);
+            //objRecorrer.Recorrer(dgvClientes);
 
         }
 
@@ -31,19 +31,19 @@ namespace pryEDRomoL
         {
             clsArchivo x = new clsArchivo();
             x.NomArchi = "Clientes.csv";
-            if (File.Exists(x.NomArchi)) x.Recorrer(dgvClientes);
-            btnGrabar.Enabled = false;
+            //if (File.Exists(x.NomArchi)) x.Recorrer(dgvClientes);
+            btnRecorrer.Enabled = false;
         }
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
             if (txtNombre.Text != "" && txtNombre.Text != "" && txtDeuda.Text != "")
             {
-                btnGrabar.Enabled = false;
+                btnRecorrer.Enabled = false;
             }
             else
             {
-                btnGrabar.Enabled = true;
+                btnRecorrer.Enabled = true;
             }
         }
 
@@ -51,7 +51,7 @@ namespace pryEDRomoL
         {
             clsArchivo x = new clsArchivo();
             x.NomArchi = ("Clientes.csv");
-            x.LimpiarTodo();
+            //x.LimpiarTodo();
             //x.Recorrer();
 
             txtCodigo.Text = "";

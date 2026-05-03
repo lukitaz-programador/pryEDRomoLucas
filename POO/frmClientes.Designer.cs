@@ -40,7 +40,7 @@
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDeuda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnListar = new System.Windows.Forms.Button();
-            this.btnGrabar = new System.Windows.Forms.Button();
+            this.btnRecorrer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,15 +131,15 @@
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
             // 
-            // btnGrabar
+            // btnRecorrer
             // 
-            this.btnGrabar.Location = new System.Drawing.Point(259, 148);
-            this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(97, 23);
-            this.btnGrabar.TabIndex = 17;
-            this.btnGrabar.Text = "Grabar";
-            this.btnGrabar.UseVisualStyleBackColor = true;
-            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            this.btnRecorrer.Location = new System.Drawing.Point(259, 148);
+            this.btnRecorrer.Name = "btnRecorrer";
+            this.btnRecorrer.Size = new System.Drawing.Size(97, 23);
+            this.btnRecorrer.TabIndex = 17;
+            this.btnRecorrer.Text = "Recorrer";
+            this.btnRecorrer.UseVisualStyleBackColor = true;
+            this.btnRecorrer.Click += new System.EventHandler(this.btnRecorrer_Click);
             // 
             // frmClientes
             // 
@@ -148,7 +148,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(384, 451);
             this.Controls.Add(this.btnListar);
-            this.Controls.Add(this.btnGrabar);
+            this.Controls.Add(this.btnRecorrer);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.txtDeuda);
             this.Controls.Add(this.lblDeuda);
@@ -178,6 +178,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDeuda;
         private System.Windows.Forms.Button btnListar;
-        private System.Windows.Forms.Button btnGrabar;
+        private System.Windows.Forms.Button btnRecorrer;
     }
 }
