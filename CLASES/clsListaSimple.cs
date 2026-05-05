@@ -22,11 +22,20 @@ namespace pryEDRomoL.CLASES
             set { pri = value; }
         }
 
+        private clsNodo ult;
+
+        public clsNodo Ultimo
+        {
+            get { return ult; }
+            set { ult = value; }
+        }
+
         public void Agregar(clsNodo Nuevo)
         {
             if (Primero == null)
             {
                 Primero = Nuevo;
+                Ultimo= Nuevo;
             }
             else
             {
@@ -49,6 +58,7 @@ namespace pryEDRomoL.CLASES
                     }
                     ant.Siguiente = Nuevo;
                     Nuevo.Siguiente = aux;
+                    Nuevo.Anterior = ant;
                 }
 
             }
@@ -57,7 +67,7 @@ namespace pryEDRomoL.CLASES
         {
             if (Primero.Codigo == Codigo)
             {
-                Primero = Primero.Siguiente;
+                Primero = null;
             }
             else
             {
@@ -105,10 +115,10 @@ namespace pryEDRomoL.CLASES
             }
 
         }
-        public void Recorrer(string NombreArchivo)
+        public void Recorrer(string NomArchi)
         {
             clsNodo Aux = Primero;
-            StreamWriter AD = new StreamWriter(NombreArchivo, false, Encoding.UTF8);
+            StreamWriter AD = new StreamWriter(NomArchi, false, Encoding.UTF8);
             AD.WriteLine("Código; Nombre; Trámite");
             while (Aux != null)
             {

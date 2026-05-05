@@ -25,23 +25,15 @@ namespace pryEDRomoL
         private void frmListaSimple_Load(object sender, EventArgs e)
         {
 
-            btnAgregar.Enabled = false;
         }
 
         private void ValidarDatos()
         {
-            if (txtCodigo.Text != "" && txtNombre.Text != "" && txtTramite.Text != "")
-            {
-                btnAgregar.Enabled = true;
-            }
-            else
-            {
-                btnAgregar.Enabled = false;
-            }
+
         }
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
-            ValidarDatos();
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -76,9 +68,11 @@ namespace pryEDRomoL
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
             objLista.Eliminar(Convert.ToInt32(cmbListaSimple.Text));
-
+            objLista.Recorrer(dgvListaSimple);
+            objLista.Recorrer(lstListaSimple);
+            objLista.Recorrer(cmbListaSimple);
+            objLista.Recorrer("ListaSimple.csv");
         }
 
         private void cmbCodigo_SelectedIndexChanged(object sender, EventArgs e)
