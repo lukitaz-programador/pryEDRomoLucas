@@ -13,7 +13,6 @@ namespace pryEDRomoL.CLASES
     {
         private clsNodo pri;
         private clsNodo ult;
-        private string NomArchi;
 
         public clsNodo Primero
         {
@@ -27,31 +26,31 @@ namespace pryEDRomoL.CLASES
         }
         public void Agregar(clsNodo nuevo)
         {
-            if (pri == null)
+            if (Primero == null)
             {
-                pri = nuevo;
-                ult = nuevo;
+                Primero = nuevo;
+                Ultimo = nuevo;
             }
             else
             {
                 if (nuevo.Codigo < pri.Codigo)
                 {
-                    nuevo.Siguiente = pri;
-                    pri.Anterior = nuevo;
-                    pri = nuevo;
+                    nuevo.Siguiente = Primero;
+                    Primero.Anterior = nuevo;
+                    Primero = nuevo;
                 }
                 else
                 {
-                    if (nuevo.Codigo > ult.Codigo)
+                    if (nuevo.Codigo > Ultimo.Codigo)
                     {
-                        ult.Siguiente = nuevo;
-                        nuevo.Anterior = ult;
-                        ult = nuevo;
+                        Ultimo.Siguiente = nuevo;
+                        nuevo.Anterior = Ultimo;
+                        Ultimo = nuevo;
                     }
                     else
                     {
-                        clsNodo aux = pri;
-                        clsNodo ant = pri;
+                        clsNodo aux = Primero;
+                        clsNodo ant = Primero;
                         while (aux.Codigo < nuevo.Codigo)
                         {
                             ant = aux;
@@ -94,14 +93,14 @@ namespace pryEDRomoL.CLASES
             cmb.Items.Clear();
             while (aux != null)
             {
-                cmb.Items.Add(aux.Codigo + " - " + aux.Nombre + " - " + aux.Tramite);
+                cmb.Items.Add(aux.Codigo);
                 aux = aux.Siguiente;
             }
         }
-        public void Recorrer()
+        public void Recorrer(string NomArchi)
         {
-            StreamWriter AD = new StreamWriter(NomArchi, true);
             clsNodo aux = Primero;
+            StreamWriter AD = new StreamWriter("ListaDoble.csv", true);
             while (aux != null)
             {
                 AD.Write(aux.Codigo);
@@ -112,6 +111,40 @@ namespace pryEDRomoL.CLASES
                 aux = aux.Siguiente;
             }
             AD.Close();
+        }
+
+        public void Eliminar(int Codigo)
+        {
+            if (Primero.Codigo == Codigo)
+            {
+                Primero = null;
+                Ultimo = null;
+            }
+            else
+            {
+                if (Primero.Codigo == Codigo)
+                {
+                    Primero = Primero.Siguiente;
+                    Primero.Anterior = null;
+                }
+                else
+                {
+                    if (Ultimo.Codigo == Codigo)
+                    {
+                        clsNodo Aux = Primero;
+                        clsNodo Ant = Primero;
+                        while (Aux.Codigo < Codigo)
+                        {
+                            Ant = Aux;
+                            Aux = Aux.Siguiente;
+                            if (Aux == null) break;
+                        }
+                        Aux= Aux.Siguiente;
+                        Aux.Anterior = Ant;
+                        Ant.Siguiente = Aux;
+                    }
+                }
+            }
         }
     }
 }

@@ -21,40 +21,35 @@ namespace pryEDRomoL
         }
 
 
-        clsListaDoble x = new clsListaDoble();
+        clsListaDoble objListaDoble = new clsListaDoble();
 
         private void frmListaDoble_Load(object sender, EventArgs e)
         {
-            clsArchivo x = new clsArchivo();
-            x.NomArchi = "ListaDoble.csv";
-            //if (File.Exists(x.NomArchi)) x.Recorrer(dgvListaDoble);
-            btnAgregar.Enabled = false;
+
         }
 
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
-            if (txtCodigo.Text != "" && txtNombre.Text != "" && txtTramite.Text != "")
-            {
-                btnAgregar.Enabled = false;
-            }
-            else
-            {
-                btnAgregar.Enabled = true;
-            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            clsNodo n = new clsNodo();
-            n.Codigo = Convert.ToInt32(txtCodigo.Text);
-            n.Nombre = txtNombre.Text;
-            n.Tramite = txtTramite.Text;
+            clsNodo x = new clsNodo();
+            x.Codigo = Convert.ToInt32(txtCodigo.Text);
+            x.Nombre = txtNombre.Text;
+            x.Tramite = txtTramite.Text;
 
-            x.Agregar(n);
-            x.Recorrer(dgvListaDoble);
-            x.Recorrer(lstListaDoble);
-            x.Recorrer(cmbListaDoble);
+            objListaDoble.Agregar(x);
+            objListaDoble.Recorrer(dgvListaDoble);
+            objListaDoble.Recorrer("ListaDoble.csv");
+            objListaDoble.Recorrer(lstListaDoble);
+            objListaDoble.Recorrer(cmbListaDoble);
+
+            //Limpio los controles
+            txtCodigo.Text = "";
+            txtNombre.Text = "";
+            txtTramite.Text = "";
 
         }
 
@@ -65,14 +60,21 @@ namespace pryEDRomoL
 
         private void txtCodigo_TextChanged_1(object sender, EventArgs e)
         {
-            if (txtCodigo.Text != "" && txtNombre.Text != "" && txtTramite.Text != "")
-            {
-                btnAgregar.Enabled = false;
-            }
-            else
-            {
-                btnAgregar.Enabled = true;
-            }
+
+        }
+
+        private clsListaDoble GetObjListaDoble()
+        {
+            return objListaDoble;
+        }
+
+        private void btnEliminar_Click_1(object sender, EventArgs e)
+        {
+            objListaDoble.Eliminar(Convert.ToInt32(cmbListaDoble.Text));
+            objListaDoble.Recorrer(dgvListaDoble);
+            objListaDoble.Recorrer("ListaDoble.csv");
+            objListaDoble.Recorrer(lstListaDoble);
+            objListaDoble.Recorrer(cmbListaDoble);
         }
     }
 }
