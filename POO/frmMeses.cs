@@ -20,10 +20,9 @@ namespace pryEDRomoL
 
         private void btnRecorrer_Click(object sender, EventArgs e)
         {
-            clsArchivo x = new clsArchivo();
-            x.NomArchi = ("Meses.csv");
-            x.Recorrer(txtMeses.Text);
-            //x.Recorrer(lstMeses);
+            clsArchivo objMes = new clsArchivo();
+            objMes.NomArchi = ("Meses.csv");
+            objMes.Recorrer(txtMeses.Text);
 
             txtMeses.Text = "";
         }
@@ -49,7 +48,7 @@ namespace pryEDRomoL
         {
             clsArchivo x = new clsArchivo();
             x.NomArchi = ("Meses.csv");
-            //x.LimpiarTodo();
+            x.LimpiarTodo();
             //x.Recorrer(lstMeses);
 
             txtMeses.Text = "";

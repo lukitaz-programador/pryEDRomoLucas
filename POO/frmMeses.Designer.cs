@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMeses));
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtMeses = new System.Windows.Forms.TextBox();
             this.btnListar = new System.Windows.Forms.Button();
@@ -86,7 +85,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(313, 334);
             this.Controls.Add(this.lstMeses);
             this.Controls.Add(this.btnRecorrer);

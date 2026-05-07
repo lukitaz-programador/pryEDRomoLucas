@@ -124,6 +124,7 @@
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // lblNomb
             // 
@@ -156,6 +157,7 @@
             this.txtTramite.Name = "txtTramite";
             this.txtTramite.Size = new System.Drawing.Size(85, 20);
             this.txtTramite.TabIndex = 5;
+            this.txtTramite.TextChanged += new System.EventHandler(this.txtTramite_TextChanged);
             // 
             // lblCodigo
             // 
@@ -189,6 +191,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(85, 20);
             this.txtNombre.TabIndex = 3;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // btnAgregar
             // 
@@ -229,11 +232,14 @@
             // 
             // dgvPila
             // 
+            this.dgvPila.AllowUserToAddRows = false;
+            this.dgvPila.AllowUserToDeleteRows = false;
             this.dgvPila.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPila.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCodigo,
             this.colNombre,
             this.colDeuda});
+            this.dgvPila.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvPila.Location = new System.Drawing.Point(189, 21);
             this.dgvPila.Name = "dgvPila";
             this.dgvPila.RowHeadersVisible = false;
@@ -286,7 +292,6 @@
             this.Name = "frmPilas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructura de datos: PILA";
-            this.Load += new System.EventHandler(this.frmPilas_Load);
             this.gbEliminado.ResumeLayout(false);
             this.gbEliminado.PerformLayout();
             this.gbNuevo.ResumeLayout(false);

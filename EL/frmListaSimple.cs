@@ -29,11 +29,28 @@ namespace pryEDRomoL
 
         private void ValidarDatos()
         {
-
+            if (txtCodigo.Text != "" && txtNombre.Text != "" && txtTramite.Text != "")
+            {
+                btnAgregar.Enabled = true;
+            }
+            else
+            {
+                btnAgregar.Enabled = false;
+            }
         }
+
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
+            ValidarDatos();
+        }
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
+        }
 
+        private void txtTramite_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -56,16 +73,6 @@ namespace pryEDRomoL
             txtTramite.Text = "";
         }
 
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-            ValidarDatos();
-        }
-
-        private void txtTramite_TextChanged(object sender, EventArgs e)
-        {
-            ValidarDatos();
-        }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             objLista.Eliminar(Convert.ToInt32(cmbListaSimple.Text));
@@ -73,11 +80,25 @@ namespace pryEDRomoL
             objLista.Recorrer(lstListaSimple);
             objLista.Recorrer(cmbListaSimple);
             objLista.Recorrer("ListaSimple.csv");
+
+            btnEliminar.Enabled = false;
         }
 
         private void cmbCodigo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ValidarDatos();
+
+        }
+
+        private void cmbListaSimple_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbListaSimple.SelectedIndex != -1)
+            {
+                btnEliminar.Enabled = true;
+            }
+            else
+            {
+                btnEliminar.Enabled = false;
+            }
         }
     }
 }

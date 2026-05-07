@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCarreras));
             this.lstCarreras = new System.Windows.Forms.ListBox();
             this.btnRecorrer = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -46,6 +45,7 @@
             // 
             // btnRecorrer
             // 
+            this.btnRecorrer.Enabled = false;
             this.btnRecorrer.Location = new System.Drawing.Point(147, 63);
             this.btnRecorrer.Name = "btnRecorrer";
             this.btnRecorrer.Size = new System.Drawing.Size(98, 23);
@@ -86,7 +86,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(278, 337);
             this.Controls.Add(this.lstCarreras);
             this.Controls.Add(this.btnRecorrer);

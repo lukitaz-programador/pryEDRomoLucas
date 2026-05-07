@@ -77,6 +77,18 @@ namespace pryEDRomoL.CLASES
             }
 
         }
+
+        public void RecorrerDes(DataGridView dgv)
+        {
+            clsNodo aux = Ultimo;
+            dgv.Rows.Clear();
+            while (aux != null)
+            {
+                dgv.Rows.Add(aux.Codigo, aux.Nombre, aux.Tramite);
+                aux = aux.Anterior;
+            }
+        }
+
         public void Recorrer(ListBox lst)
         {
             clsNodo aux = Primero;
@@ -87,6 +99,17 @@ namespace pryEDRomoL.CLASES
                 aux = aux.Siguiente;
             }
         }
+        public void RecorrerDes(ListBox lst)
+        {
+            clsNodo aux = Ultimo;
+            lst.Items.Clear();
+            while (aux != null)
+            {
+                lst.Items.Add(aux.Codigo);
+                aux = aux.Anterior;
+            }
+        }
+
         public void Recorrer(ComboBox cmb)
         {
             clsNodo aux = Primero;
@@ -97,6 +120,18 @@ namespace pryEDRomoL.CLASES
                 aux = aux.Siguiente;
             }
         }
+
+        public void RecorrerDes(ComboBox cmb)
+        {
+            clsNodo aux = Ultimo;
+            cmb.Items.Clear();
+            while (aux != null)
+            {
+                cmb.Items.Add(aux.Codigo);
+                aux = aux.Anterior;
+            }
+        }
+
         public void Recorrer(string NomArchi)
         {
             clsNodo aux = Primero;
@@ -113,37 +148,59 @@ namespace pryEDRomoL.CLASES
             AD.Close();
         }
 
+        public void RecorrerDes(string NomArchi)
+        {
+            clsNodo aux = Ultimo;
+            StreamWriter AD = new StreamWriter("ListaDoble.csv", true);
+            while (aux != null)
+            {
+                AD.Write(aux.Codigo);
+                AD.Write(";");
+                AD.Write(aux.Nombre);
+                AD.Write(";");
+                AD.WriteLine(aux.Tramite);
+                aux = aux.Anterior;
+            }
+            AD.Close();
+        }
+
         public void Eliminar(int Codigo)
         {
-            if (Primero.Codigo == Codigo)
+            if (Primero == null) return; // Lista vacía
+
+            clsNodo Aux = Primero;
+
+            // 1. Buscar el nodo a eliminar
+            while (Aux != null && Aux.Codigo != Codigo)
             {
-                Primero = null;
-                Ultimo = null;
+                Aux = Aux.Siguiente;
             }
+
+            // Si no se encontró el código, salimos
+            if (Aux == null) return;
+
+            // 2. Si el nodo es el PRIMERO
+            if (Aux == Primero)
+            {
+                Primero = Aux.Siguiente;
+                if (Primero != null)
+                    Primero.Anterior = null;
+                else
+                    Ultimo = null; // La lista quedó vacía
+            }
+            // 3. Si el nodo es el ÚLTIMO
+            else if (Aux == Ultimo)
+            {
+                Ultimo = Aux.Anterior;
+                if (Ultimo != null)
+                    Ultimo.Siguiente = null;
+            }
+            // 4. Si está en el MEDIO
             else
             {
-                if (Primero.Codigo == Codigo)
-                {
-                    Primero = Primero.Siguiente;
-                    Primero.Anterior = null;
-                }
-                else
-                {
-                    if (Ultimo.Codigo == Codigo)
-                    {
-                        clsNodo Aux = Primero;
-                        clsNodo Ant = Primero;
-                        while (Aux.Codigo < Codigo)
-                        {
-                            Ant = Aux;
-                            Aux = Aux.Siguiente;
-                            if (Aux == null) break;
-                        }
-                        Aux= Aux.Siguiente;
-                        Aux.Anterior = Ant;
-                        Ant.Siguiente = Aux;
-                    }
-                }
+                // El truco de la "puenteada"
+                Aux.Anterior.Siguiente = Aux.Siguiente;
+                Aux.Siguiente.Anterior = Aux.Anterior;
             }
         }
     }

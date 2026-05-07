@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmColores));
             this.lstColores = new System.Windows.Forms.ListBox();
             this.btnRecorrer = new System.Windows.Forms.Button();
             this.btnListar = new System.Windows.Forms.Button();
@@ -86,7 +85,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(326, 396);
             this.Controls.Add(this.lstColores);
             this.Controls.Add(this.btnRecorrer);

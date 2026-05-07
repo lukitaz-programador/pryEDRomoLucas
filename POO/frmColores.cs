@@ -20,10 +20,10 @@ namespace pryEDRomoL
 
         private void btnRecorrer_Click(object sender, EventArgs e)
         {
-            clsArchivo x = new clsArchivo();
-            x.NomArchi = ("Colores.csv");
-            x.Recorrer(txtColores.Text);
-            //x.Recorrer(lstColores);
+            clsArchivo objColor = new clsArchivo();
+            objColor.NomArchi = ("Colores.csv");
+            objColor.Recorrer(txtColores.Text);
+            objColor.Recorrer(lstColores);
 
             txtColores.Text = "";
         }

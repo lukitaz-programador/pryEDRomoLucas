@@ -20,10 +20,9 @@ namespace pryEDRomoL
 
         private void btnRecorrer_Click(object sender, EventArgs e)
         {
-            clsArchivo x = new clsArchivo();
-            x.NomArchi = ("Carreras.csv");
-            x.Recorrer(txtCarreras.Text);
-            //x.Recorrer(lstCarreras);
+            clsArchivo objCarrera = new clsArchivo();
+            objCarrera.NomArchi = ("Carreras.csv");
+            objCarrera.Recorrer(txtCarreras.Text);
 
             txtCarreras.Text = "";
         }
@@ -32,8 +31,8 @@ namespace pryEDRomoL
         {
             clsArchivo x = new clsArchivo();
             x.NomArchi = ("Carreras.csv");
-            //x.LimpiarTodo();
-            //x.Recorrer(lstCarreras);
+            x.LimpiarTodo();
+            x.Recorrer(lstCarreras);
 
             txtCarreras.Text = "";
         }
@@ -52,7 +51,7 @@ namespace pryEDRomoL
 
         private void frmCarreras_Load(object sender, EventArgs e)
         {
-            btnRecorrer.Enabled = false;
+            
         }
     }
 }

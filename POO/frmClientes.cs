@@ -20,11 +20,14 @@ namespace pryEDRomoL
 
         private void btnRecorrer_Click(object sender, EventArgs e)
         {
-            clsArchivo objRecorrer = new clsArchivo();
-            objRecorrer.NomArchi = "Clientes.csv";
-            objRecorrer.Recorrer(txtCodigo.Text, txtNombre.Text, txtDeuda.Text);
-            //objRecorrer.Recorrer(dgvClientes);
+            clsArchivo objCliente = new clsArchivo();
+            objCliente.NomArchi = "Clientes.csv";
+            objCliente.Recorrer(txtCodigo.Text, txtNombre.Text, txtDeuda.Text);
+            objCliente.Recorrer(dgvClientes);
 
+            txtNombre.Text = "";    
+            txtCodigo.Text = "";
+            txtDeuda.Text = "";
         }
 
         private void frmClientes_Load(object sender, EventArgs e)
@@ -51,12 +54,48 @@ namespace pryEDRomoL
         {
             clsArchivo x = new clsArchivo();
             x.NomArchi = ("Clientes.csv");
-            //x.LimpiarTodo();
-            //x.Recorrer();
+            // x.LimpiarTodo();
+            // x.Recorrer();
 
             txtCodigo.Text = "";
             txtNombre.Text = "";
             txtDeuda.Text = "";
+        }
+
+        private void txtCodigo_TextChanged_1(object sender, EventArgs e)
+        {
+            if (txtNombre.Text != "" && txtNombre.Text != "" && txtDeuda.Text != "")
+            {
+                btnRecorrer.Enabled = false;
+            }
+            else
+            {
+                btnRecorrer.Enabled = true;
+            }
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text != "" && txtNombre.Text != "" && txtDeuda.Text != "")
+            {
+                btnRecorrer.Enabled = false;
+            }
+            else
+            {
+                btnRecorrer.Enabled = true;
+            }
+        }
+
+        private void txtDeuda_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text != "" && txtNombre.Text != "" && txtDeuda.Text != "")
+            {
+                btnRecorrer.Enabled = false;
+            }
+            else
+            {
+                btnRecorrer.Enabled = true;
+            }
         }
     }
 }

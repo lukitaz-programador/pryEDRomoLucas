@@ -74,6 +74,7 @@
             this.cmbListaSimple.Name = "cmbListaSimple";
             this.cmbListaSimple.Size = new System.Drawing.Size(97, 21);
             this.cmbListaSimple.TabIndex = 7;
+            this.cmbListaSimple.SelectedIndexChanged += new System.EventHandler(this.cmbListaSimple_SelectedIndexChanged);
             // 
             // lblCod
             // 
@@ -86,6 +87,7 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Enabled = false;
             this.btnEliminar.Location = new System.Drawing.Point(21, 124);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(131, 34);
@@ -190,11 +192,14 @@
             // 
             // dgvListaSimple
             // 
+            this.dgvListaSimple.AllowUserToAddRows = false;
+            this.dgvListaSimple.AllowUserToDeleteRows = false;
             this.dgvListaSimple.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaSimple.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCodigo,
             this.colNombre,
             this.colDeuda});
+            this.dgvListaSimple.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListaSimple.Location = new System.Drawing.Point(189, 21);
             this.dgvListaSimple.Name = "dgvListaSimple";
             this.dgvListaSimple.RowHeadersVisible = false;

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlumnos));
             this.dgvAlumnos = new System.Windows.Forms.DataGridView();
             this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,11 +45,14 @@
             // 
             // dgvAlumnos
             // 
+            this.dgvAlumnos.AllowUserToAddRows = false;
+            this.dgvAlumnos.AllowUserToDeleteRows = false;
             this.dgvAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlumnos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCodigo,
             this.colNombre,
             this.colCarrera});
+            this.dgvAlumnos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvAlumnos.Location = new System.Drawing.Point(12, 190);
             this.dgvAlumnos.Name = "dgvAlumnos";
             this.dgvAlumnos.Size = new System.Drawing.Size(362, 243);
@@ -99,6 +101,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(216, 20);
             this.txtNombre.TabIndex = 11;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // lblNombre
             // 
@@ -136,6 +139,7 @@
             this.btnListar.TabIndex = 16;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // cmbCarrera
             // 
@@ -144,12 +148,12 @@
             this.cmbCarrera.Name = "cmbCarrera";
             this.cmbCarrera.Size = new System.Drawing.Size(121, 21);
             this.cmbCarrera.TabIndex = 17;
+            this.cmbCarrera.SelectedIndexChanged += new System.EventHandler(this.cmbCarrera_SelectedIndexChanged);
             // 
             // frmAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(386, 449);
             this.Controls.Add(this.cmbCarrera);
             this.Controls.Add(this.btnListar);

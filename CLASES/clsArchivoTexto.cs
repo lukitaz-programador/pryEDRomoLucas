@@ -35,7 +35,7 @@ namespace pryEDRomoL
             sw.WriteLine(texto);
             sw.Close();
         }
-        public string Leer()
+        public string Recorrer()
         {
             StreamReader sr = new StreamReader(NomArchi);
             string texto = sr.ReadToEnd();
@@ -43,7 +43,7 @@ namespace pryEDRomoL
             return texto;
         }
 
-        public void Leer(ListBox Lista)
+        public void Recorrer(ListBox Lista)
         {
             String datoLeido;
             Lista.Items.Clear();
@@ -57,7 +57,7 @@ namespace pryEDRomoL
             }
             AD.Close();
         }
-        public void Leer(ComboBox Lista)
+        public void Recorrer(ComboBox Lista)
         {
             String datoLeido;
             Lista.Items.Clear();
@@ -72,7 +72,7 @@ namespace pryEDRomoL
             AD.Close();
             Lista.SelectedIndex = 0;
         }
-        public void Leer(DataGridView dgv)
+        public void Recorrer(DataGridView dgv)
         {
             String DatoLeido;
             dgv.Rows.Clear();
@@ -87,6 +87,12 @@ namespace pryEDRomoL
             }
 
             AD.Close();
+        }
+
+        public void LimpiarTodo()
+        {
+            StreamWriter sw = new StreamWriter(NomArchi, false);
+            sw.Close();
         }
     }
 }

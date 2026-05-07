@@ -1,4 +1,5 @@
 ﻿using pryEDRomoL;
+using pryEDRomoL.CLASES;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,46 +17,66 @@ namespace pryEDRomoL
     public partial class frmColas : Form
     {
 
-        clsCola x = new clsCola();
+        clsCola Cola = new clsCola();
         public frmColas()
         {
             InitializeComponent();
         }
 
+        private void ValidarDatos()
+        {
+            if (txtCodigo.Text != "" && txtNombre.Text != "" && txtTramite.Text != "")
+            {
+                btnAgregar.Enabled = true;
+            }
+            else
+            {
+                btnAgregar.Enabled = false;
+            }
+        }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            clsNodo n = new clsNodo();
-            n.Codigo = Convert.ToInt32(txtCodigo.Text);
-            n.Nombre = txtNombre.Text;
-            n.Tramite = txtTramite.Text;
-            x.Agregar(n);
-            x.Recorrer(dgvCola);
-            x.Recorrer(lstListadoCola);
+            clsNodo x = new clsNodo();
+            x.Codigo = Convert.ToInt32(txtCodigo.Text);
+            x.Nombre = txtNombre.Text;
+            x.Tramite = txtTramite.Text;
 
-            txtCodigo.Clear();
-            txtNombre.Clear();
-            txtTramite.Clear();
+            Cola.Agregar(x);
+            Cola.Recorrer(dgvCola);
+            //Esto no es necesario pero se hrealiza para ver si funciona el programa y el método
+            Cola.Recorrer("Cola.csv");
+            Cola.Recorrer(lstCola);
+
+            //Limpio los controles
+            txtCodigo.Text = "";
+            txtNombre.Text = "";
+            txtTramite.Text = "";
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (x.Primero != null)
-            {
+            Cola.Eliminar(Cola.Primero);
+            Cola.Recorrer(dgvCola);
+            Cola.Recorrer(lstCola);
+            Cola.Recorrer("Cola.csv");
 
-                lblCodigo.Text = Convert.ToString(x.Primero.Codigo);
-                lblNombre.Text = x.Primero.Nombre;
-                lblTramite.Text = x.Primero.Tramite;
-                x.Eliminar(x.Primero);
-                x.Recorrer(dgvCola);
-                x.Recorrer(lstListadoCola);
-            }
-            else
-            {
-                MessageBox.Show("No hay elementos para eliminar.");
-                lblTramite.Text = "";
-                lblNombre.Text = "";
-                lblCodigo.Text = "";
-            }
+            btnEliminar.Enabled = false;
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
+        }
+
+        private void txtTramite_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
         }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientes));
             this.lblCodigo = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -60,6 +59,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged_1);
             // 
             // txtNombre
             // 
@@ -67,6 +67,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(241, 20);
             this.txtNombre.TabIndex = 3;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // lblNombre
             // 
@@ -84,6 +85,7 @@
             this.txtDeuda.Name = "txtDeuda";
             this.txtDeuda.Size = new System.Drawing.Size(100, 20);
             this.txtDeuda.TabIndex = 5;
+            this.txtDeuda.TextChanged += new System.EventHandler(this.txtDeuda_TextChanged);
             // 
             // lblDeuda
             // 
@@ -133,6 +135,7 @@
             // 
             // btnRecorrer
             // 
+            this.btnRecorrer.Enabled = false;
             this.btnRecorrer.Location = new System.Drawing.Point(259, 148);
             this.btnRecorrer.Name = "btnRecorrer";
             this.btnRecorrer.Size = new System.Drawing.Size(97, 23);
@@ -145,7 +148,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(384, 451);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.btnRecorrer);

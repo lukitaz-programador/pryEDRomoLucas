@@ -56,10 +56,10 @@ namespace pryEDRomoL
             }
         }
 
-        public void Recorrer()
+        public void Recorrer(string v)
         {
             clsNodo aux = Primero;
-            StreamWriter AD = new StreamWriter("Cola.txt", true, Encoding.UTF8);
+            StreamWriter AD = new StreamWriter("Cola.csv", true, Encoding.UTF8);
             AD.WriteLine("Lista de espera\n");
 
             AD.WriteLine("Codigo;Nombre;Tramite");

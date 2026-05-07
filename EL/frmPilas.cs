@@ -19,24 +19,38 @@ namespace pryEDRomoL
             InitializeComponent();
         }
 
-        private void frmPilas_Load(object sender, EventArgs e)
+        clsPila Pila = new clsPila();
+
+        private void ValidarDatos()
         {
-            clsArchivo x = new clsArchivo();
-            x.NomArchi = "Pila.csv";
-            //if (File.Exists(x.NomArchi)) x.Recorrer(dgvPila);
-            btnAgregar.Enabled = false;
+            if (txtCodigo.Text != "" && txtNombre.Text != "" && txtTramite.Text != "")
+            {
+                btnAgregar.Enabled = true;
+            }
+            else
+            {
+                btnAgregar.Enabled = false;
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
-            if (txtCodigo.Text != "" && txtNombre.Text != "" && txtTramite.Text != "")
-            {
-                btnAgregar.Enabled = false;
-            }
-            else
-            {
-                btnAgregar.Enabled = true;
-            }
+            ValidarDatos();
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
+        }
+
+        private void txtTramite_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
         }
     }
 }
