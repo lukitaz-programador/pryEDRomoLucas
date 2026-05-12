@@ -33,11 +33,6 @@ namespace pryEDRomoL
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
             ValidarDatos();
@@ -51,6 +46,52 @@ namespace pryEDRomoL
         private void txtTramite_TextChanged(object sender, EventArgs e)
         {
             ValidarDatos();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            clsNodo x = new clsNodo();
+            x.Codigo = Convert.ToInt32(txtCodigo.Text);
+            x.Nombre = txtNombre.Text;
+            x.Tramite = txtTramite.Text;
+
+            Pila.Agregar(x);
+            Pila.Recorrer(dgvPila);
+            Pila.Recorrer("Pila.csv");
+            Pila.Recorrer(lstPila);
+
+            lblCodRdo.Text = x.Codigo.ToString();
+            lblNomRdo.Text = x.Nombre;
+            lblTramRdo.Text = x.Tramite;
+
+            //Limpio los controles
+            txtCodigo.Text = "";
+            txtNombre.Text = "";
+            txtTramite.Text = "";
+
+            btnEliminar.Enabled = true;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Pila.Eliminar(Pila.Ultimo.Codigo);
+
+            Pila.Recorrer(dgvPila);
+            Pila.Recorrer(lstPila);
+            Pila.Recorrer("Pila.csv");
+
+            lblCodRdo.Text = "";
+            lblNomRdo.Text = "";
+            lblTramRdo.Text = "";
+
+            if (Pila.Ultimo == null)
+            {
+                btnEliminar.Enabled = false;
+            }
+            else
+            {
+                btnEliminar.Enabled = true;
+            }
         }
     }
 }

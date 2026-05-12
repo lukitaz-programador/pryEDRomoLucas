@@ -18,40 +18,44 @@ namespace pryEDRomoL
             InitializeComponent();
         }
 
-        private void btnRecorrer_Click(object sender, EventArgs e)
+        private void ValidarDatos()
         {
-            clsArchivo objMes = new clsArchivo();
-            objMes.NomArchi = ("Meses.csv");
-            objMes.Recorrer(txtMeses.Text);
-
-            txtMeses.Text = "";
+            if (txtMeses.Text != "")
+            {
+                btnAgregar.Enabled = true;
+            }
+            else
+            {
+                btnAgregar.Enabled = false;
+            }
         }
 
         private void frmMeses_Load(object sender, EventArgs e)
         {
-            btnRecorrer.Enabled = false;
+            btnAgregar.Enabled = false;
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            if (txtMeses.Text == "")
+            ValidarDatos();
+        }
+
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
+        {
+            if (lstMeses.Items.Count > 0)
             {
-                btnRecorrer.Enabled = false;
-            }
-            else
-            {
-                btnRecorrer.Enabled = true;
+                lstMeses.Items.Clear();
             }
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
-            clsArchivo x = new clsArchivo();
-            x.NomArchi = ("Meses.csv");
-            x.LimpiarTodo();
-            //x.Recorrer(lstMeses);
-
-            txtMeses.Text = "";
+            if (txtMeses.Text != "")
+            {
+                lstMeses.Items.Add(txtMeses.Text);
+                txtMeses.Text = "";
+                btnAgregar.Enabled = false;
+            }
         }
     }
 }

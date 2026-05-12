@@ -18,6 +18,11 @@ namespace pryEDRomoL
             InitializeComponent();
         }
 
+        private void ValidarDatos()
+        {
+
+        }
+
         private void btnRecorrer_Click(object sender, EventArgs e)
         {
             clsArchivo objCliente = new clsArchivo();
@@ -96,6 +101,11 @@ namespace pryEDRomoL
             {
                 btnRecorrer.Enabled = true;
             }
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -18,6 +18,11 @@ namespace pryEDRomoL
             InitializeComponent();
         }
 
+        private void ValidarDatos()
+        {
+
+        }
+
         private void btnRecorrer_Click(object sender, EventArgs e)
         {
             clsArchivo objCarrera = new clsArchivo();

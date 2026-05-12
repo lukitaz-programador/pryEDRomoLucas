@@ -30,9 +30,9 @@
         {
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtMeses = new System.Windows.Forms.TextBox();
-            this.btnListar = new System.Windows.Forms.Button();
-            this.btnRecorrer = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.lstMeses = new System.Windows.Forms.ListBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -53,25 +53,16 @@
             this.txtMeses.TabIndex = 1;
             this.txtMeses.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
-            // btnListar
+            // btnAgregar
             // 
-            this.btnListar.Location = new System.Drawing.Point(145, 68);
-            this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(75, 23);
-            this.btnListar.TabIndex = 2;
-            this.btnListar.Text = "Listar";
-            this.btnListar.UseVisualStyleBackColor = true;
-            // 
-            // btnRecorrer
-            // 
-            this.btnRecorrer.Enabled = false;
-            this.btnRecorrer.Location = new System.Drawing.Point(226, 68);
-            this.btnRecorrer.Name = "btnRecorrer";
-            this.btnRecorrer.Size = new System.Drawing.Size(75, 23);
-            this.btnRecorrer.TabIndex = 3;
-            this.btnRecorrer.Text = "Recorrer";
-            this.btnRecorrer.UseVisualStyleBackColor = true;
-            this.btnRecorrer.Click += new System.EventHandler(this.btnRecorrer_Click);
+            this.btnAgregar.Enabled = false;
+            this.btnAgregar.Location = new System.Drawing.Point(226, 68);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 3;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lstMeses
             // 
@@ -81,14 +72,24 @@
             this.lstMeses.Size = new System.Drawing.Size(289, 212);
             this.lstMeses.TabIndex = 4;
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(226, 340);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 5;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click_1);
+            // 
             // frmMeses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 334);
+            this.ClientSize = new System.Drawing.Size(313, 375);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.lstMeses);
-            this.Controls.Add(this.btnRecorrer);
-            this.Controls.Add(this.btnListar);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtMeses);
             this.Controls.Add(this.lblNombre);
             this.Name = "frmMeses";
@@ -103,8 +104,8 @@
 
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtMeses;
-        private System.Windows.Forms.Button btnListar;
-        private System.Windows.Forms.Button btnRecorrer;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.ListBox lstMeses;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }

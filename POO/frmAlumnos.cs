@@ -19,6 +19,11 @@ namespace pryEDRomoL
             InitializeComponent();
         }
 
+        private void ValidarDatos()
+        {
+
+        }
+
         private void frmAlumnos_Load(object sender, EventArgs e)
         {
             clsArchivo objAlumnos = new clsArchivo();
@@ -32,14 +37,7 @@ namespace pryEDRomoL
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
-            if (txtCodigo.Text != "" && txtNombre.Text != "")
-            {
-                btnRecorrer.Enabled = true;
-            }
-            else
-            {
-                btnRecorrer.Enabled = false;
-            }
+            ValidarDatos();
         }
 
         private void btnRecorrer_Click(object sender, EventArgs e)

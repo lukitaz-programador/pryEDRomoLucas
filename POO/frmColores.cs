@@ -18,41 +18,46 @@ namespace pryEDRomoL
             InitializeComponent();
         }
 
-        private void btnRecorrer_Click(object sender, EventArgs e)
+        private void ValidarDatos()
         {
-            clsArchivo objColor = new clsArchivo();
-            objColor.NomArchi = ("Colores.csv");
-            objColor.Recorrer(txtColores.Text);
-            objColor.Recorrer(lstColores);
-
-            txtColores.Text = "";
+            if (txtColores.Text == "")
+            {
+                btnAgregar.Enabled = false;
+            }
+            else
+            {
+                btnAgregar.Enabled = true;
+            }
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            if (txtColores.Text == "")
-            {
-                btnRecorrer.Enabled = false;
-            }
-            else
-            {
-                btnRecorrer.Enabled = true;
-            }
+            ValidarDatos();
         }
 
         private void frmColores_Load(object sender, EventArgs e)
         {
-            btnRecorrer.Enabled = false;
+            btnAgregar.Enabled = false;
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
         {
-            clsArchivo x = new clsArchivo();
-            x.NomArchi = ("Careras.csv");
-            //x.LimpiarTodo();
-            //x.Recorrer(lstColores);
+            if (lstColores.Items.Count > 0)
+            {
+                lstColores.Items.Clear();
+            }   
 
-            txtColores.Text = "";
+            
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            if (txtColores.Text != "")
+            {
+                lstColores.Items.Add(txtColores.Text);
+                txtColores.Text = "";
+                btnAgregar.Enabled = false;
+            }
         }
     }
 }

@@ -43,7 +43,7 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.gbEliminado = new System.Windows.Forms.GroupBox();
-            this.lblTramiteRdo = new System.Windows.Forms.Label();
+            this.lblTramRdo = new System.Windows.Forms.Label();
             this.lblNomRdo = new System.Windows.Forms.Label();
             this.lblCodRdo = new System.Windows.Forms.Label();
             this.lblCod = new System.Windows.Forms.Label();
@@ -118,6 +118,7 @@
             // 
             // btnAgregar
             // 
+            this.btnAgregar.Enabled = false;
             this.btnAgregar.Location = new System.Drawing.Point(21, 124);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(131, 34);
@@ -197,7 +198,7 @@
             // 
             // gbEliminado
             // 
-            this.gbEliminado.Controls.Add(this.lblTramiteRdo);
+            this.gbEliminado.Controls.Add(this.lblTramRdo);
             this.gbEliminado.Controls.Add(this.lblNomRdo);
             this.gbEliminado.Controls.Add(this.lblCodRdo);
             this.gbEliminado.Controls.Add(this.lblCod);
@@ -211,13 +212,13 @@
             this.gbEliminado.TabStop = false;
             this.gbEliminado.Text = "Elemento Eliminado";
             // 
-            // lblTramiteRdo
+            // lblTramRdo
             // 
-            this.lblTramiteRdo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTramiteRdo.Location = new System.Drawing.Point(67, 90);
-            this.lblTramiteRdo.Name = "lblTramiteRdo";
-            this.lblTramiteRdo.Size = new System.Drawing.Size(85, 20);
-            this.lblTramiteRdo.TabIndex = 5;
+            this.lblTramRdo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTramRdo.Location = new System.Drawing.Point(67, 90);
+            this.lblTramRdo.Name = "lblTramRdo";
+            this.lblTramRdo.Size = new System.Drawing.Size(85, 20);
+            this.lblTramRdo.TabIndex = 5;
             // 
             // lblNomRdo
             // 
@@ -324,7 +325,7 @@
         private System.Windows.Forms.Label lblTramit;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label lblNomb;
-        private System.Windows.Forms.Label lblTramiteRdo;
+        private System.Windows.Forms.Label lblTramRdo;
         private System.Windows.Forms.Label lblNomRdo;
         private System.Windows.Forms.Label lblCodRdo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCodigo;

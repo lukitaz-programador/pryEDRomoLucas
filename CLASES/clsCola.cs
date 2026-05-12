@@ -42,34 +42,6 @@ namespace pryEDRomoL
             }
         }
 
-        public void Eliminar(clsNodo eliminar)
-        {
-            if (Primero == null)
-            {
-                Primero = eliminar;
-                Ultimo = eliminar;
-
-            }
-            else
-            {
-                Primero = Primero.Siguiente;
-            }
-        }
-
-        public void Recorrer(string v)
-        {
-            clsNodo aux = Primero;
-            StreamWriter AD = new StreamWriter("Cola.csv", true, Encoding.UTF8);
-            AD.WriteLine("Lista de espera\n");
-
-            AD.WriteLine("Codigo;Nombre;Tramite");
-            while (aux != null)
-            {
-                AD.WriteLine(aux.Codigo + ";" + aux.Nombre + ";" + aux.Tramite);
-                aux = aux.Siguiente;
-            }
-
-        }
         public void Recorrer(DataGridView Grilla)
         {
             clsNodo aux = Primero;
@@ -82,29 +54,49 @@ namespace pryEDRomoL
             }
 
         }
-        public void Recorrer(ComboBox combo)
+        public void Recorrer(string NomArchi)
         {
             clsNodo aux = Primero;
-            combo.Items.Clear();
+
+            using (StreamWriter AD = new StreamWriter(NomArchi, false, Encoding.UTF8))
+            {
+                AD.WriteLine("Codigo;Nombre;Tramite");
+
+                while (aux != null)
+                {
+                    AD.WriteLine(aux.Codigo + ";" + aux.Nombre + ";" + aux.Tramite);
+                    aux = aux.Siguiente;
+                }
+                AD.Close();
+            }
+        }
+
+        public void Recorrer(ListBox lista)
+        {
+            clsNodo aux = Primero;
+            lista.Items.Clear();
 
             while (aux != null)
             {
-                combo.Items.Add(aux.Nombre);
+                lista.Items.Add(aux.Nombre);
                 aux = aux.Siguiente;
             }
 
         }
-        public void Recorrer(ListBox combo)
+
+        public void Eliminar(Int32 Codigo)
         {
-            clsNodo aux = Primero;
-            combo.Items.Clear();
-
-            while (aux != null)
+            if (Primero != null)
             {
-                combo.Items.Add(aux.Nombre);
-                aux = aux.Siguiente;
+                if (Primero.Codigo == Codigo)
+                {
+                    Primero = Primero.Siguiente;
+                    if (Primero == null)
+                    {
+                        Ultimo = null;
+                    }
+                }
             }
-
         }
     }
 }

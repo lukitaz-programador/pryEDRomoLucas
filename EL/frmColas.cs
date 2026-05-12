@@ -44,24 +44,42 @@ namespace pryEDRomoL
 
             Cola.Agregar(x);
             Cola.Recorrer(dgvCola);
-            //Esto no es necesario pero se hrealiza para ver si funciona el programa y el método
             Cola.Recorrer("Cola.csv");
             Cola.Recorrer(lstCola);
+
+            lblCodRdo.Text = x.Codigo.ToString();
+            lblNomRdo.Text = x.Nombre;
+            lblTramRdo.Text = x.Tramite;
 
             //Limpio los controles
             txtCodigo.Text = "";
             txtNombre.Text = "";
             txtTramite.Text = "";
+
+            btnEliminar.Enabled = true;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            Cola.Eliminar(Cola.Primero);
+
+            Cola.Eliminar(Cola.Primero.Codigo);
+
             Cola.Recorrer(dgvCola);
             Cola.Recorrer(lstCola);
             Cola.Recorrer("Cola.csv");
 
-            btnEliminar.Enabled = false;
+            lblCodRdo.Text = "";
+            lblNomRdo.Text = "";
+            lblTramRdo.Text = "";
+
+            if (Cola.Primero == null)
+            {
+                btnEliminar.Enabled = false;
+            }
+            else
+            {
+                btnEliminar.Enabled = true;
+            }
         }
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.gbEliminado = new System.Windows.Forms.GroupBox();
-            this.lblTramiteRdo = new System.Windows.Forms.Label();
+            this.lblTramRdo = new System.Windows.Forms.Label();
             this.lblNomRdo = new System.Windows.Forms.Label();
             this.lblCodRdo = new System.Windows.Forms.Label();
             this.lblCod = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
             this.gbListado = new System.Windows.Forms.GroupBox();
-            this.lstListadoPila = new System.Windows.Forms.ListBox();
+            this.lstPila = new System.Windows.Forms.ListBox();
             this.dgvPila = new System.Windows.Forms.DataGridView();
             this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +60,7 @@
             // 
             // gbEliminado
             // 
-            this.gbEliminado.Controls.Add(this.lblTramiteRdo);
+            this.gbEliminado.Controls.Add(this.lblTramRdo);
             this.gbEliminado.Controls.Add(this.lblNomRdo);
             this.gbEliminado.Controls.Add(this.lblCodRdo);
             this.gbEliminado.Controls.Add(this.lblCod);
@@ -74,13 +74,13 @@
             this.gbEliminado.TabStop = false;
             this.gbEliminado.Text = "Elemento Eliminado";
             // 
-            // lblTramiteRdo
+            // lblTramRdo
             // 
-            this.lblTramiteRdo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTramiteRdo.Location = new System.Drawing.Point(67, 90);
-            this.lblTramiteRdo.Name = "lblTramiteRdo";
-            this.lblTramiteRdo.Size = new System.Drawing.Size(85, 20);
-            this.lblTramiteRdo.TabIndex = 5;
+            this.lblTramRdo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTramRdo.Location = new System.Drawing.Point(67, 90);
+            this.lblTramRdo.Name = "lblTramRdo";
+            this.lblTramRdo.Size = new System.Drawing.Size(85, 20);
+            this.lblTramRdo.TabIndex = 5;
             // 
             // lblNomRdo
             // 
@@ -201,6 +201,7 @@
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblNombre
             // 
@@ -213,7 +214,7 @@
             // 
             // gbListado
             // 
-            this.gbListado.Controls.Add(this.lstListadoPila);
+            this.gbListado.Controls.Add(this.lstPila);
             this.gbListado.Controls.Add(this.dgvPila);
             this.gbListado.Location = new System.Drawing.Point(9, 190);
             this.gbListado.Name = "gbListado";
@@ -222,13 +223,13 @@
             this.gbListado.TabStop = false;
             this.gbListado.Text = "Listado en una Lista y una Grilla";
             // 
-            // lstListadoPila
+            // lstPila
             // 
-            this.lstListadoPila.FormattingEnabled = true;
-            this.lstListadoPila.Location = new System.Drawing.Point(16, 19);
-            this.lstListadoPila.Name = "lstListadoPila";
-            this.lstListadoPila.Size = new System.Drawing.Size(157, 160);
-            this.lstListadoPila.TabIndex = 1;
+            this.lstPila.FormattingEnabled = true;
+            this.lstPila.Location = new System.Drawing.Point(16, 19);
+            this.lstPila.Name = "lstPila";
+            this.lstPila.Size = new System.Drawing.Size(157, 160);
+            this.lstPila.TabIndex = 1;
             // 
             // dgvPila
             // 
@@ -306,7 +307,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbEliminado;
-        private System.Windows.Forms.Label lblTramiteRdo;
+        private System.Windows.Forms.Label lblTramRdo;
         private System.Windows.Forms.Label lblNomRdo;
         private System.Windows.Forms.Label lblCodRdo;
         private System.Windows.Forms.Label lblCod;
@@ -322,7 +323,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.GroupBox gbListado;
-        private System.Windows.Forms.ListBox lstListadoPila;
+        private System.Windows.Forms.ListBox lstPila;
         private System.Windows.Forms.DataGridView dgvPila;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
