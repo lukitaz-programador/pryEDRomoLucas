@@ -23,11 +23,12 @@ namespace pryEDRomoL
 
         }
 
-        private void btnRecorrer_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
             clsArchivo objCarrera = new clsArchivo();
             objCarrera.NomArchi = ("Carreras.csv");
             objCarrera.Recorrer(txtCarreras.Text);
+            lstCarreras.Items.Add(txtCarreras.Text);
 
             txtCarreras.Text = "";
         }
@@ -38,6 +39,7 @@ namespace pryEDRomoL
             x.NomArchi = ("Carreras.csv");
             x.LimpiarTodo();
             x.Recorrer(lstCarreras);
+            lstCarreras.Items.Clear();
 
             txtCarreras.Text = "";
         }
@@ -46,11 +48,11 @@ namespace pryEDRomoL
         {
             if (txtCarreras.Text == "")
             {
-                btnRecorrer.Enabled = false;
+                btnAgregar.Enabled = false;
             }
             else
             {
-                btnRecorrer.Enabled = true;
+                btnAgregar.Enabled = true;
             }
         }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmColas));
             this.dgvCola = new System.Windows.Forms.DataGridView();
             this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -276,6 +277,7 @@
             // 
             // pbColas
             // 
+            this.pbColas.Image = ((System.Drawing.Image)(resources.GetObject("pbColas.Image")));
             this.pbColas.Location = new System.Drawing.Point(27, 22);
             this.pbColas.Name = "pbColas";
             this.pbColas.Size = new System.Drawing.Size(157, 146);
