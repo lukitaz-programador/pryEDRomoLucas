@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListaDoble));
             this.gbEliminado = new System.Windows.Forms.GroupBox();
             this.cmbListaDoble = new System.Windows.Forms.ComboBox();
             this.lblCod = new System.Windows.Forms.Label();
@@ -280,6 +281,7 @@
             // 
             // pbColas
             // 
+            this.pbColas.Image = ((System.Drawing.Image)(resources.GetObject("pbColas.Image")));
             this.pbColas.Location = new System.Drawing.Point(12, 12);
             this.pbColas.Name = "pbColas";
             this.pbColas.Size = new System.Drawing.Size(177, 175);

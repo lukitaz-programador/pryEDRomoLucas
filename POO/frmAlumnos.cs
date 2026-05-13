@@ -21,7 +21,14 @@ namespace pryEDRomoL
 
         private void ValidarDatos()
         {
-
+            if (txtCodigo.Text != "" && txtNombre.Text != "" && cmbCarrera.SelectedIndex != -1)
+            {
+                btnAgregar.Enabled = true;
+            }
+            else
+            {
+                btnAgregar.Enabled = false;
+            }
         }
 
         private void frmAlumnos_Load(object sender, EventArgs e)
@@ -42,13 +49,32 @@ namespace pryEDRomoL
 
         private void btnRecorrer_Click(object sender, EventArgs e)
         {
-            clsArchivo objRecorrer = new clsArchivo();
-            objRecorrer.NomArchi = "Alumnos.csv";
-            objRecorrer.Recorrer(txtCodigo.Text, txtNombre.Text, cmbCarrera.Text);
-            objRecorrer.Recorrer(dgvAlumnos);
+            if (txtCodigo.Text != "" && txtNombre.Text != "" && cmbCarrera.Text != "")
+            {
+                dgvAlumnos.Rows.Add(txtNombre.Text, txtCodigo.Text, cmbCarrera.Text);
+                txtNombre.Text = "";
+                txtCodigo.Text = "";
+                cmbCarrera.SelectedIndex = -1;
+                btnAgregar.Enabled = false;
+            }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
+        }
+
+        private void cmbCarrera_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
+        }
+
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
         {
             clsArchivo x = new clsArchivo();
             x.NomArchi = ("Alumnos.csv");
@@ -58,35 +84,6 @@ namespace pryEDRomoL
             txtCodigo.Text = "";
             txtNombre.Text = "";
             cmbCarrera.Text = "";
-        }
-
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-            if (txtCodigo.Text != "" && txtNombre.Text != "")
-            {
-                btnRecorrer.Enabled = true;
-            }
-            else
-            {
-                btnRecorrer.Enabled = false;
-            }
-        }
-
-        private void cmbCarrera_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbCarrera.Text != "")
-            {
-                btnRecorrer.Enabled = true;
-            }
-            else
-            {
-                btnRecorrer.Enabled = false;
-            }
-        }
-
-        private void btnListar_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

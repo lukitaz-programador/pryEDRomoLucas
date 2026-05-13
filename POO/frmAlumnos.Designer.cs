@@ -32,13 +32,13 @@
             this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCarrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnRecorrer = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.lblCarrera = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.btnListar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.cmbCarrera = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).BeginInit();
             this.SuspendLayout();
@@ -73,16 +73,16 @@
             this.colCarrera.HeaderText = "Carrera";
             this.colCarrera.Name = "colCarrera";
             // 
-            // btnRecorrer
+            // btnAgregar
             // 
-            this.btnRecorrer.Enabled = false;
-            this.btnRecorrer.Location = new System.Drawing.Point(264, 145);
-            this.btnRecorrer.Name = "btnRecorrer";
-            this.btnRecorrer.Size = new System.Drawing.Size(97, 23);
-            this.btnRecorrer.TabIndex = 14;
-            this.btnRecorrer.Text = "Recorrer";
-            this.btnRecorrer.UseVisualStyleBackColor = true;
-            this.btnRecorrer.Click += new System.EventHandler(this.btnRecorrer_Click);
+            this.btnAgregar.Enabled = false;
+            this.btnAgregar.Location = new System.Drawing.Point(264, 145);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(97, 23);
+            this.btnAgregar.TabIndex = 14;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnRecorrer_Click);
             // 
             // lblCarrera
             // 
@@ -96,7 +96,6 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(86, 51);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(216, 20);
@@ -131,19 +130,26 @@
             this.lblCodigo.TabIndex = 8;
             this.lblCodigo.Text = "Código:";
             // 
-            // btnListar
+            // btnLimpiar
             // 
-            this.btnListar.Location = new System.Drawing.Point(161, 145);
-            this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(97, 23);
-            this.btnListar.TabIndex = 16;
-            this.btnListar.Text = "Listar";
-            this.btnListar.UseVisualStyleBackColor = true;
-            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
+            this.btnLimpiar.Location = new System.Drawing.Point(161, 145);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(97, 23);
+            this.btnLimpiar.TabIndex = 16;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click_1);
             // 
             // cmbCarrera
             // 
+            this.cmbCarrera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCarrera.FormattingEnabled = true;
+            this.cmbCarrera.Items.AddRange(new object[] {
+            "Sistemas",
+            "Diseño Gráfico",
+            "IA",
+            "Marketing",
+            "Admin. Empresas"});
             this.cmbCarrera.Location = new System.Drawing.Point(86, 101);
             this.cmbCarrera.Name = "cmbCarrera";
             this.cmbCarrera.Size = new System.Drawing.Size(121, 21);
@@ -156,9 +162,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(386, 449);
             this.Controls.Add(this.cmbCarrera);
-            this.Controls.Add(this.btnListar);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.dgvAlumnos);
-            this.Controls.Add(this.btnRecorrer);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblCarrera);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
@@ -176,7 +182,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvAlumnos;
-        private System.Windows.Forms.Button btnRecorrer;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label lblCarrera;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
@@ -185,7 +191,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCarrera;
-        private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.ComboBox cmbCarrera;
     }
 }

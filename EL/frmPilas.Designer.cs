@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPilas));
             this.gbEliminado = new System.Windows.Forms.GroupBox();
             this.lblTramRdo = new System.Windows.Forms.Label();
             this.lblNomRdo = new System.Windows.Forms.Label();
@@ -274,6 +275,7 @@
             // 
             // pbColas
             // 
+            this.pbColas.Image = ((System.Drawing.Image)(resources.GetObject("pbColas.Image")));
             this.pbColas.Location = new System.Drawing.Point(25, 21);
             this.pbColas.Name = "pbColas";
             this.pbColas.Size = new System.Drawing.Size(157, 146);
