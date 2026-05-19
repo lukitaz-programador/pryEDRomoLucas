@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArbol));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbDescendente = new System.Windows.Forms.RadioButton();
             this.rbAscendente = new System.Windows.Forms.RadioButton();
@@ -49,23 +48,24 @@
             this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDeuda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pbColas = new System.Windows.Forms.PictureBox();
             this.btnEquilibrar = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.groupBox1.SuspendLayout();
             this.gbEliminado.SuspendLayout();
             this.gbNuevo.SuspendLayout();
             this.gbListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDoble)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbColas)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.rbDescendente);
             this.groupBox1.Controls.Add(this.rbAscendente);
-            this.groupBox1.Location = new System.Drawing.Point(6, 61);
+            this.groupBox1.Location = new System.Drawing.Point(6, 44);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(169, 73);
+            this.groupBox1.Size = new System.Drawing.Size(169, 97);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listar Datos";
@@ -74,7 +74,7 @@
             // 
             this.rbDescendente.AutoSize = true;
             this.rbDescendente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDescendente.Location = new System.Drawing.Point(9, 42);
+            this.rbDescendente.Location = new System.Drawing.Point(9, 44);
             this.rbDescendente.Name = "rbDescendente";
             this.rbDescendente.Size = new System.Drawing.Size(98, 19);
             this.rbDescendente.TabIndex = 1;
@@ -263,16 +263,6 @@
             this.colDeuda.Name = "colDeuda";
             this.colDeuda.Width = 125;
             // 
-            // pbColas
-            // 
-            this.pbColas.Image = ((System.Drawing.Image)(resources.GetObject("pbColas.Image")));
-            this.pbColas.Location = new System.Drawing.Point(12, 12);
-            this.pbColas.Name = "pbColas";
-            this.pbColas.Size = new System.Drawing.Size(177, 175);
-            this.pbColas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbColas.TabIndex = 27;
-            this.pbColas.TabStop = false;
-            // 
             // btnEquilibrar
             // 
             this.btnEquilibrar.Location = new System.Drawing.Point(379, 140);
@@ -282,16 +272,35 @@
             this.btnEquilibrar.Text = "Equilibrar";
             this.btnEquilibrar.UseVisualStyleBackColor = true;
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(9, 69);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(98, 19);
+            this.radioButton1.TabIndex = 2;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Descendente";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(12, 11);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(168, 174);
+            this.treeView1.TabIndex = 32;
+            // 
             // frmArbol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(547, 415);
+            this.Controls.Add(this.treeView1);
             this.Controls.Add(this.btnEquilibrar);
             this.Controls.Add(this.gbEliminado);
             this.Controls.Add(this.gbNuevo);
             this.Controls.Add(this.gbListado);
-            this.Controls.Add(this.pbColas);
             this.Name = "frmArbol";
             this.Text = "frmArbol";
             this.groupBox1.ResumeLayout(false);
@@ -302,7 +311,6 @@
             this.gbNuevo.PerformLayout();
             this.gbListado.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDoble)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbColas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -329,7 +337,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDeuda;
-        private System.Windows.Forms.PictureBox pbColas;
         private System.Windows.Forms.Button btnEquilibrar;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }
