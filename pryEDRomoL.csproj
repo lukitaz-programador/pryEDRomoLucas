@@ -49,12 +49,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CLASES\clsArbol.cs" />
     <Compile Include="CLASES\clsArchivoTexto.cs" />
     <Compile Include="CLASES\clsCola.cs" />
     <Compile Include="CLASES\clsListaDoble.cs" />
     <Compile Include="CLASES\clsListaSimple.cs" />
     <Compile Include="CLASES\clsNodo.cs" />
     <Compile Include="CLASES\clsPila.cs" />
+    <Compile Include="ENL\frmArbol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ENL\frmArbol.Designer.cs">
+      <DependentUpon>frmArbol.cs</DependentUpon>
+    </Compile>
     <Compile Include="POO\frmAlumnos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +130,9 @@
     </Compile>
     <Compile Include="CLASES\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ENL\frmArbol.resx">
+      <DependentUpon>frmArbol.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="POO\frmAlumnos.resx">
       <DependentUpon>frmAlumnos.cs</DependentUpon>
     </EmbeddedResource>

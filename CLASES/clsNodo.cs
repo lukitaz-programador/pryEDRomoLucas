@@ -16,6 +16,8 @@ namespace pryEDRomoL
         private string Tra;
         private clsNodo Sig;
         private clsNodo ant;
+        private clsNodo Izq;
+        private clsNodo Der;
 
         //Propiedades del nodo
         public Int32 Codigo
@@ -46,6 +48,18 @@ namespace pryEDRomoL
         {
             get { return Sig; }
             set { Sig = value; }
+        }
+
+        public clsNodo Izquierdo
+        {
+            get { return Izq; }
+            set { Izq = value; }
+        }
+
+        public clsNodo Derecho
+        {
+            get { return Der; }
+            set { Der = value; }
         }
     }
 }
