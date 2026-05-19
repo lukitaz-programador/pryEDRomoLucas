@@ -19,7 +19,7 @@ namespace pryEDRomoL
 
         public void Recorrer(DataGridView Grilla)
         {
-            clsNodo aux = Primero;
+            clsNodo aux = Raiz;
             Grilla.Rows.Clear();
 
             while (aux != null)
@@ -29,9 +29,20 @@ namespace pryEDRomoL
             }
 
         }
+        public void Recorrer(ComboBox cmb)
+        {
+            clsNodo aux = Raiz;
+            cmb.Items.Clear();
+            while (aux != null)
+            {
+                cmb.Items.Add(aux.Codigo);
+                aux = aux.Siguiente;
+            }
+        }
+
         public void Recorrer(string NomArchi)
         {
-            clsNodo aux = Primero;
+            clsNodo aux = Raiz;
 
             using (StreamWriter AD = new StreamWriter(NomArchi, false, Encoding.UTF8))
             {
@@ -54,16 +65,19 @@ namespace pryEDRomoL
             }
              else
             {
+                clsNodo aux = Raiz;
+                clsNodo ant = Raiz;
+
                 while (aux != null) 
                 {
                     ant = aux;
                     if (nuevo.Codigo < aux.Codigo)
                     {
-                        aux = aux.izq;
+                        aux = aux.Izquierdo;
                     }
                     else
                     {
-                        aux = aux.der;
+                        aux = aux.Derecho;
                     }
                 }
             }

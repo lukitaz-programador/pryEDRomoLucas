@@ -1,4 +1,5 @@
 ﻿using pryEDRomoL;
+using pryEDRomoL.ENL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -83,6 +84,12 @@ namespace pryEDRomoL
         {
             frmListaDoble frmListaDoble = new frmListaDoble();
             frmListaDoble.ShowDialog();
+        }
+
+        private void arbolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmArbol frmArbolazo = new frmArbol();
+            frmArbolazo.ShowDialog();
         }
     }
 }

@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.rbDescendente = new System.Windows.Forms.RadioButton();
             this.rbAscendente = new System.Windows.Forms.RadioButton();
             this.gbEliminado = new System.Windows.Forms.GroupBox();
-            this.cmbListaDoble = new System.Windows.Forms.ComboBox();
+            this.cmbArbol = new System.Windows.Forms.ComboBox();
             this.lblCod = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.gbNuevo = new System.Windows.Forms.GroupBox();
@@ -44,18 +45,17 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
             this.gbListado = new System.Windows.Forms.GroupBox();
-            this.dgvListaDoble = new System.Windows.Forms.DataGridView();
+            this.dgvArbol = new System.Windows.Forms.DataGridView();
             this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDeuda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEquilibrar = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.treeArbol = new System.Windows.Forms.TreeView();
             this.groupBox1.SuspendLayout();
             this.gbEliminado.SuspendLayout();
             this.gbNuevo.SuspendLayout();
             this.gbListado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListaDoble)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArbol)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -70,16 +70,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listar Datos";
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(9, 69);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(84, 19);
+            this.radioButton1.TabIndex = 2;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Post-Order";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
             // rbDescendente
             // 
             this.rbDescendente.AutoSize = true;
             this.rbDescendente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbDescendente.Location = new System.Drawing.Point(9, 44);
             this.rbDescendente.Name = "rbDescendente";
-            this.rbDescendente.Size = new System.Drawing.Size(98, 19);
+            this.rbDescendente.Size = new System.Drawing.Size(79, 19);
             this.rbDescendente.TabIndex = 1;
             this.rbDescendente.TabStop = true;
-            this.rbDescendente.Text = "Descendente";
+            this.rbDescendente.Text = "Pre-Order";
             this.rbDescendente.UseVisualStyleBackColor = true;
             // 
             // rbAscendente
@@ -88,15 +100,15 @@
             this.rbAscendente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbAscendente.Location = new System.Drawing.Point(9, 19);
             this.rbAscendente.Name = "rbAscendente";
-            this.rbAscendente.Size = new System.Drawing.Size(89, 19);
+            this.rbAscendente.Size = new System.Drawing.Size(70, 19);
             this.rbAscendente.TabIndex = 0;
             this.rbAscendente.TabStop = true;
-            this.rbAscendente.Text = "Ascendente";
+            this.rbAscendente.Text = "In-Order";
             this.rbAscendente.UseVisualStyleBackColor = true;
             // 
             // gbEliminado
             // 
-            this.gbEliminado.Controls.Add(this.cmbListaDoble);
+            this.gbEliminado.Controls.Add(this.cmbArbol);
             this.gbEliminado.Controls.Add(this.lblCod);
             this.gbEliminado.Controls.Add(this.btnEliminar);
             this.gbEliminado.Location = new System.Drawing.Point(370, 11);
@@ -106,14 +118,14 @@
             this.gbEliminado.TabStop = false;
             this.gbEliminado.Text = "Elemento a eliminar";
             // 
-            // cmbListaDoble
+            // cmbArbol
             // 
-            this.cmbListaDoble.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbListaDoble.FormattingEnabled = true;
-            this.cmbListaDoble.Location = new System.Drawing.Point(61, 27);
-            this.cmbListaDoble.Name = "cmbListaDoble";
-            this.cmbListaDoble.Size = new System.Drawing.Size(97, 21);
-            this.cmbListaDoble.TabIndex = 7;
+            this.cmbArbol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbArbol.FormattingEnabled = true;
+            this.cmbArbol.Location = new System.Drawing.Point(61, 27);
+            this.cmbArbol.Name = "cmbArbol";
+            this.cmbArbol.Size = new System.Drawing.Size(97, 21);
+            this.cmbArbol.TabIndex = 7;
             // 
             // lblCod
             // 
@@ -200,6 +212,7 @@
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblNombre
             // 
@@ -214,7 +227,7 @@
             // gbListado
             // 
             this.gbListado.Controls.Add(this.groupBox1);
-            this.gbListado.Controls.Add(this.dgvListaDoble);
+            this.gbListado.Controls.Add(this.dgvArbol);
             this.gbListado.Location = new System.Drawing.Point(6, 204);
             this.gbListado.Name = "gbListado";
             this.gbListado.Size = new System.Drawing.Size(533, 204);
@@ -222,22 +235,22 @@
             this.gbListado.TabStop = false;
             this.gbListado.Text = "Listado en una Lista y una Grilla";
             // 
-            // dgvListaDoble
+            // dgvArbol
             // 
-            this.dgvListaDoble.AllowUserToAddRows = false;
-            this.dgvListaDoble.AllowUserToDeleteRows = false;
-            this.dgvListaDoble.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListaDoble.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvArbol.AllowUserToAddRows = false;
+            this.dgvArbol.AllowUserToDeleteRows = false;
+            this.dgvArbol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArbol.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCodigo,
             this.colNombre,
             this.colDeuda});
-            this.dgvListaDoble.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvListaDoble.Location = new System.Drawing.Point(189, 21);
-            this.dgvListaDoble.Name = "dgvListaDoble";
-            this.dgvListaDoble.RowHeadersVisible = false;
-            this.dgvListaDoble.RowHeadersWidth = 51;
-            this.dgvListaDoble.Size = new System.Drawing.Size(313, 158);
-            this.dgvListaDoble.TabIndex = 0;
+            this.dgvArbol.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvArbol.Location = new System.Drawing.Point(189, 21);
+            this.dgvArbol.Name = "dgvArbol";
+            this.dgvArbol.RowHeadersVisible = false;
+            this.dgvArbol.RowHeadersWidth = 51;
+            this.dgvArbol.Size = new System.Drawing.Size(313, 158);
+            this.dgvArbol.TabIndex = 0;
             // 
             // colCodigo
             // 
@@ -272,31 +285,19 @@
             this.btnEquilibrar.Text = "Equilibrar";
             this.btnEquilibrar.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // treeArbol
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(9, 69);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(98, 19);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Descendente";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // treeView1
-            // 
-            this.treeView1.Location = new System.Drawing.Point(12, 11);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(168, 174);
-            this.treeView1.TabIndex = 32;
+            this.treeArbol.Location = new System.Drawing.Point(12, 11);
+            this.treeArbol.Name = "treeArbol";
+            this.treeArbol.Size = new System.Drawing.Size(168, 174);
+            this.treeArbol.TabIndex = 32;
             // 
             // frmArbol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(547, 415);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.treeArbol);
             this.Controls.Add(this.btnEquilibrar);
             this.Controls.Add(this.gbEliminado);
             this.Controls.Add(this.gbNuevo);
@@ -310,7 +311,7 @@
             this.gbNuevo.ResumeLayout(false);
             this.gbNuevo.PerformLayout();
             this.gbListado.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListaDoble)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArbol)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -321,7 +322,7 @@
         private System.Windows.Forms.RadioButton rbDescendente;
         private System.Windows.Forms.RadioButton rbAscendente;
         private System.Windows.Forms.GroupBox gbEliminado;
-        private System.Windows.Forms.ComboBox cmbListaDoble;
+        private System.Windows.Forms.ComboBox cmbArbol;
         private System.Windows.Forms.Label lblCod;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.GroupBox gbNuevo;
@@ -333,12 +334,12 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.GroupBox gbListado;
-        private System.Windows.Forms.DataGridView dgvListaDoble;
+        private System.Windows.Forms.DataGridView dgvArbol;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDeuda;
         private System.Windows.Forms.Button btnEquilibrar;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView treeArbol;
     }
 }
